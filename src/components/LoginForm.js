@@ -24,23 +24,25 @@ class LoginForm extends Component {
   }
 
   handleLogin(e) {
+    e.preventDefault()
     let userStatus = this.state.isUser ? 'user' : 'clinician'
     fetch(`http://localhost:3000/authenticate/${userStatus}`, {
       method: 'POST',
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
-      }),
+      body: JSON.stringify({ email: this.state.email, password: this.state.password}),
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }
     }).then(res => {
       return res.json()
-    }).then(loginRes => {
-      if (loginRes.error) this.setState({error: 'Bad email or password'})
     })
-    e.preventDefault()
+    .then(loginRes => {
+      if (loginRes.error) this.setState({error: 'Bad email or password'})
+      else {
+        localStorage.setItem('token', loginRes.auth_token)
+        // loginRes.who === 'u' ?
+      }
+    })
   }
 
   handleEmailChange(e) {
