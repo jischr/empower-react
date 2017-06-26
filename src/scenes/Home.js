@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import { Cookies } from 'react-cookie'
-import {instanceOf} from 'prop-types'
+import { instanceOf } from 'prop-types'
 
 import HomeUser from '../components/HomeUser'
 import HomeClinician from '../components/HomeClinician'
@@ -17,7 +17,6 @@ class Home extends Component {
   }
   componentWillMount() {
     let cookies = new Cookies()
-    console.log(cookies.get('isUser'))
     this.setState({
       isLoggedIn: cookies.get('isLoggedIn'),
       isUser: +cookies.get('isUser')
