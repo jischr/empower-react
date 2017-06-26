@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import
   { FormGroup,
     FormControl,
@@ -6,21 +7,33 @@ import
     Button,
     ButtonGroup
   } from 'react-bootstrap'
+import { Cookies } from 'react-cookie'
+
 import '../assets/Landing.css'
 
 class LoginForm extends Component {
   constructor() {
     super()
+
     this.state = {
       isUser: true,
       email: '',
       password: '',
-      error: ''
+      error: '',
+      redirect: false
     }
+
     this.handleLogin = this.handleLogin.bind(this)
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
     this.changeUserStatus = this.changeUserStatus.bind(this)
+    this.handleRedirect = this.handleRedirect.bind(this)
+  }
+
+  handleRedirect() {
+    if (this.state.redirect) {
+      return <Redirect to={"/home"} />
+    }
   }
 
   handleLogin(e) {
@@ -39,8 +52,24 @@ class LoginForm extends Component {
     .then(loginRes => {
       if (loginRes.error) this.setState({error: 'Bad email or password'})
       else {
-        localStorage.setItem('token', loginRes.auth_token)
-        // loginRes.who === 'u' ?
+        // COOKIES with react-cookie
+        const cookies = new Cookies()
+        // establish epiration
+        let expiration = new Date()
+        const milliSecInDay = 86400000
+        expiration.setTime(expiration.getTime() + milliSecInDay)
+        // set cookie (depending on if user or clinician)
+        if (loginRes.user_id) {
+          cookies.set('id', loginRes.user_id, {path:'/', expires: expiration})
+          cookies.set('isUser', 1, {path:'/', expires: expiration})
+        }
+        if (loginRes.clinician_id) {
+          cookies.set('id', loginRes.clinician_id, {path:'/', expires: expiration})
+          cookies.set('isUser', 0, {path:'/', expires: expiration})
+        }
+        // keep track of login status
+        cookies.set('isLoggedIn', 1, {path:'/', expires: expiration})
+        this.setState({ redirect: true})
       }
     })
   }
@@ -85,6 +114,7 @@ class LoginForm extends Component {
           </Button>
         </form>
         <h5 className="error">{this.state.error}</h5>
+        {this.handleRedirect()}
       </div>
     )
   }
