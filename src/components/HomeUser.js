@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
-import SideNav from './SideNav'
-import '../assets/homeUser.css'
 import { Cookies } from 'react-cookie'
 import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
+import SideNav from './SideNav'
+import '../assets/homeUser.css'
 
 class HomeUser extends Component {
   constructor() {
@@ -43,6 +45,7 @@ class HomeUser extends Component {
             <Button>Add New</Button>
           </div>
         </div>
+        <Link to="/survey"><Button>Take a Survey</Button></Link>
       </div>
     )
   }

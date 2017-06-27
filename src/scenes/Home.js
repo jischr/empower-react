@@ -7,33 +7,18 @@ import HomeUser from '../components/HomeUser'
 import HomeClinician from '../components/HomeClinician'
 
 class Home extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      isLoggedIn: false,
-      isUser: null
-    }
-  }
-  componentWillMount() {
-    let cookies = new Cookies()
-    this.setState({
-      isLoggedIn: cookies.get('isLoggedIn'),
-      isUser: +cookies.get('isUser')
-    })
-  }
   render() {
     let cookies = new Cookies()
-    if (!this.state.isLoggedIn) {
+    if (!cookies.get('isLoggedIn')) {
       cookies.remove()
       return <Redirect to={"/"}/>
     }
-    else if (this.state.isUser) {
+    else if (+cookies.get('isUser')) {
       return (
         <HomeUser />
       )
     }
-    else if (!this.state.isUser) {
+    else if (!+cookies.get('isUser')) {
       return (
         <HomeClinician />
       )
