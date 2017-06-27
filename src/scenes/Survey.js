@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Redirect } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 
-import SideNav from '../components/SideNav'
+import Header from '../components/Header'
 import BDI from '../components/BDI'
 
 
@@ -16,7 +16,7 @@ class Survey extends Component {
     else if (+cookies.get('isUser')) {
       return (
         <div>
-          <SideNav />
+          <Header />
           <BDI />
         </div>
       )

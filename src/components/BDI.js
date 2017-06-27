@@ -103,7 +103,6 @@ class BDI extends Component {
   render() {
     return (
       <div>
-        <h1>Hi There</h1>
         <div className="container-fluid">
            <FormGroup>
              <Radio name="q1" inline value={this.questions[this.state.question_id][0][1]} onChange={this.handleChange}>

@@ -7,11 +7,9 @@
   border-bottom: 0px;
 }
 
-.welcome-text {
-  color: #4f4e4f;
-  font-size: 3em;
+.welcome-sun {
+  height: 5em;
 }
-
 
 .alternatives {
   /*background-color: #90A9B7;*/

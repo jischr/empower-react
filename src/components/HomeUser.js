@@ -3,7 +3,7 @@ import { Cookies } from 'react-cookie'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-import SideNav from './SideNav'
+import Header from './Header'
 import '../assets/homeUser.css'
 
 class HomeUser extends Component {
@@ -33,10 +33,7 @@ class HomeUser extends Component {
   render() {
     return (
       <div>
-        <SideNav />
-        <div className="well well-large welcome">
-          <h1 className="text-center welcome-text">Welcome, {this.state.name}</h1>
-        </div>
+      <Header />
         <div className="container">
           <div className="jumbotron alternatives">
             <ul>

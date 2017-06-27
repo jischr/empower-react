@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
-import SideNav from './SideNav'
+import Header from './Header'
 
 class HomeClinician extends Component {
   render() {
     return (
       <div>
-        <SideNav />
+        <Header />
       </div>
     )
   }
