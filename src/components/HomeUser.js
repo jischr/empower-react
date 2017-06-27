@@ -45,7 +45,7 @@ class HomeUser extends Component {
             <Button>Add New</Button>
           </div>
         </div>
-        <Link to="/survey"><Button>Take a Survey</Button></Link>
+        <Link to="/survey" className="text-center"><Button>Take a Survey</Button></Link>
       </div>
     )
   }
