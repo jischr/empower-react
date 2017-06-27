@@ -3,7 +3,7 @@
 }
 
 .sidenav_openbtn {
-  margin: 1em;
+  margin: 2.5em 1em;
 }
 
 .sidenav_openbtn span {
@@ -14,7 +14,6 @@
   margin-left: 1.2em;
   color: #000;
 }
-
 
 .Sidebar-demo {
   padding: 15px;
@@ -96,21 +95,10 @@
   width: 320px;
 }
 
-.sideNavBtn {
-  margin-top: -6rem;
-  margin-right: 3rem;
-  font-size: 20px;
-  padding-top: 10px;
-}
-
 .hidden {
   display: none;
 }
 
-.bottomHR {
-  border: 0;
-  height: 1px;
-  background: #333;
-  background-image: linear-gradient(to right, #ccc, #333, #ccc);
-  width: 800px;
+.Sidebar {
+  width: 350px;
 }

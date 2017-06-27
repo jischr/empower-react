@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
+import SideNav from './SideNav'
 
 class HomeClinician extends Component {
   render() {
     return (
-      <h1>Clinician</h1>
+      <div>
+        <SideNav />
+      </div>
     )
   }
 }

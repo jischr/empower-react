@@ -1,0 +1,30 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.welcome {
+  background-color: #F9EDDB;
+  border-bottom: 0px;
+}
+
+.welcome-text {
+  color: #4f4e4f;
+  font-size: 3em;
+}
+
+
+.alternatives {
+  /*background-color: #90A9B7;*/
+  height: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alt-list-text {
+  list-style: none;
+  /*text-transform: uppercase;*/
+  line-height: 2em;
+  font-size: 2em;
+}
