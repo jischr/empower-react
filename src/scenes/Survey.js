@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 
 import SideNav from '../components/SideNav'
-import BDI from '../components/BDI'
+import SurveyContent from '../components/SurveyContent'
 
 
 class Survey extends Component {
@@ -17,7 +17,7 @@ class Survey extends Component {
       return (
         <div>
           <SideNav />
-          <BDI />
+          <SurveyContent />
         </div>
       )
     }
