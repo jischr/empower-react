@@ -3,7 +3,8 @@ import { Redirect } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 
 import Header from '../components/Header'
-import BDI from '../components/BDI'
+import SurveyContent from '../components/SurveyContent'
+
 
 
 class Survey extends Component {
@@ -17,7 +18,7 @@ class Survey extends Component {
       return (
         <div>
           <Header />
-          <BDI />
+          <SurveyContent />
         </div>
       )
     }
