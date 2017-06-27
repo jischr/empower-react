@@ -38,7 +38,7 @@ class Sidebar extends Component {
   }
 }
 
-class SideNav extends Component {
+class SideNavUser extends Component {
 	constructor(props, context) {
   	super(props, context);
 
@@ -68,4 +68,4 @@ class SideNav extends Component {
   }
 }
 
-export default SideNav
+export default SideNavUser

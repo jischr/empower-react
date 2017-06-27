@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import { Cookies } from 'react-cookie'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { Jumbotron } from 'react-bootstrap'
 
+import SideNavUser from './SideNavUser'
 import Header from './Header'
 import '../assets/homeUser.css'
 
@@ -33,16 +35,19 @@ class HomeUser extends Component {
   render() {
     return (
       <div>
+      <SideNavUser />
       <Header />
         <div className="container">
-          <div className="jumbotron alternatives">
+          <Jumbotron className="alternatives">
             <ul>
               {this.state.alt_ideas}
             </ul>
             <Button>Add New</Button>
-          </div>
+          </Jumbotron>
         </div>
-        <Link to="/survey" className="text-center"><Button>Take a Survey</Button></Link>
+        <div className="text-center">
+          <Link to="/survey"><Button>Take a Survey</Button></Link>
+        </div>
       </div>
     )
   }
