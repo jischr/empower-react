@@ -8,9 +8,12 @@
 }
 
 .welcome-sun {
-  height: 5em;
+  height: 2.5em;
 }
 
+.welcome h2 {
+  margin: 0px;
+}
 .alternatives {
   /*background-color: #90A9B7;*/
   height: 30em;
