@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/Landing.css'
-import LoginForm from '../components/LoginForm'
+import SignupForm from '../components/SignupForm'
 
 class Landing extends Component {
   render() {
@@ -11,9 +11,9 @@ class Landing extends Component {
           <div className="splash-content">
             <h2 className="text-center splash-heading">EmpowerU</h2>
             <h4 className="splash-tagline">clinician-led active platform for self management</h4>
-            <div className="login text-center">
-              <LoginForm/>
-              <h5><Link to="/signup">Create Account</Link></h5>
+            <div className="login">
+              <SignupForm/>
+              <h5><Link to="/">Back to Login</Link></h5>
             </div>
           </div>
         </div>
