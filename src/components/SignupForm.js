@@ -22,7 +22,7 @@ class SignupForm extends Component {
       last_name: null,
       practice: null,
       phone_number: null,
-      error: '',
+      errors: [],
       redirect: false,
       form_incomplete: true
     }
@@ -40,12 +40,47 @@ class SignupForm extends Component {
 
   handleRedirect() {
     if (this.state.redirect) {
-      return <Redirect to={"/home"} />
+      return <Redirect to={"/"} />
     }
   }
 
   handleSignup(e) {
     e.preventDefault()
+    let userStatus
+    let userData = {first_name: this.state.first_name, last_name: this.state.last_name, email: this.state.email, password: this.state.password}
+
+    if (this.state.isUser) {
+      userStatus = 'users'
+      userData['phone_number'] = this.state.phone_number
+      userData['patient_number'] =  Math.random().toString(36).substring(7)
+    }
+    else {
+      userStatus = 'clinicians'
+      userData['practice'] = this.state.practice
+    }
+
+    fetch(`http://localhost:3000/v1/${userStatus}`, {
+      method: 'POST',
+      body: JSON.stringify(userData),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => {
+      return res.json()
+    })
+    .then(loginRes => {
+      if (loginRes.errors) {
+        let errors = []
+        for (let key in loginRes.errors) {
+          errors.push(`${key} ${loginRes.errors[key]}`)
+        }
+        this.setState({errors: errors})
+      }
+      else {
+        this.setState({redirect: true})
+      }
+    })
   }
 
   changeUserStatus (e){
@@ -139,7 +174,9 @@ class SignupForm extends Component {
             </Button>
           </div>
         </form>
-        <h5 className="error">{this.state.error}</h5>
+        {this.state.errors.map((error, index) => {
+          return <h5 key={index} className="error text-center">{error}</h5>
+        })}
         {this.handleRedirect()}
       </div>
     )
