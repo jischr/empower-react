@@ -32,7 +32,7 @@ class Sidebar extends Component {
     	<Modal className='Sidebar left' show={ this.props.isVisible } onHide={this.props.onHide}
       	 autoFocus keyboard>
       	<Modal.Header closeButton>
-        	<Modal.Title className="Modal-title">EmpowerU</Modal.Title>
+        	<Modal.Title className="sidebar_title">EmpowerU</Modal.Title>
           <br />
         </Modal.Header>
       	<Modal.Body>

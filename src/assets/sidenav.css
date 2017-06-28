@@ -12,7 +12,8 @@
 
 .sidenav_link {
   margin-left: 1.2em;
-  color: #000;
+  color: rgb(26, 62, 80);
+  font-size: 1.25em;
 }
 
 .Sidebar-demo {
@@ -37,8 +38,7 @@
 
 .Sidebar.modal {
   max-width: 100%;
-  /*box-shadow: 2px 0 2px #b9b8b8;*/
-  background-color: #f5f5f5;
+  background-color: rgb(240, 240, 240);
 }
 
 .modal-logo {
@@ -46,10 +46,14 @@
   opacity: 0.7;
 }
 
-.Modal-title {
-  font-size: 34px;
-  color: #000;
-  font-weight: normal;
+.sidebar_title {
+  font-size: 2.75em;
+  color: rgb(26, 62, 80);
+  font-weight: 800;
+}
+
+.sidebar_sun_logo {
+  height: 1.4em;
 }
 
 .new-entry-button {
@@ -101,4 +105,54 @@
 
 .Sidebar {
   width: 350px;
+}
+
+.Sidebar hr {
+  border-color: rgb(58, 138, 158);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgb(58, 138, 158);
+  margin-bottom: 18px;
+}
+
+.crisis_div {
+  width: 100%;
+  background-color: rgb(26, 62, 80);
+  border-radius: 0px;
+  border: 0px;
+  margin-top: 0em;
+}
+
+.crisis_div h3 {
+  color: rgb(58, 138, 158);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+.crisis_div p {
+  color: white;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 7px 5px 7px 5px;
+}
+
+.crisis_div .bold_header {
+  color: rgb(58, 138, 158);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.phone_logo {
+  height: 18px;
+}
+
+.waves_image {
+  width: 100%;
+  height: 298px;
+  border-top: 1px solid rgb(58, 138, 158);
+  margin-top: -1.5em;
+  align-items: center;
 }
