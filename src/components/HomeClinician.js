@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Jumbotron } from 'react-bootstrap'
 
 import Header from './Header'
+import Charts from './Charts'
 import SideNavC from './SideNavC'
 import AddUser from './AddUser'
 import '../assets/homeUser.css'
@@ -52,6 +53,7 @@ class HomeClinician extends Component {
             </ul>
             <AddUser c_id={c_id}/>
           </Jumbotron>
+          <Charts />
         </div>
       </div>
     )

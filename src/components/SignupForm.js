@@ -8,7 +8,6 @@ import
     ButtonGroup,
     Col
   } from 'react-bootstrap'
-import { Cookies } from 'react-cookie'
 
 class SignupForm extends Component {
   constructor() {
