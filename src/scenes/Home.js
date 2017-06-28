@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 
 import HomeUser from '../components/HomeUser'

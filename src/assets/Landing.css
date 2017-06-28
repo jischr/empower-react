@@ -1,7 +1,11 @@
+.background_image {
+  background: url('./images/splash.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
 .splash {
   height: 750px;
-  background-image: url('./splash.jpg');
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +15,7 @@
 .splash-content {
   height: auto;
   padding: 50px 150px 50px 150px;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .7);
   display: flex;
   flex-direction: column;
   justify-content: center;

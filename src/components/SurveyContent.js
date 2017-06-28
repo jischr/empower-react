@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-import { FormGroup, Radio, Button } from 'react-bootstrap'
+import { FormGroup, Radio, Button, Grid, Col, Row } from 'react-bootstrap'
 import { Cookies } from 'react-cookie'
 import { Redirect } from 'react-router-dom'
 
+import '../assets/survey.css'
 
 class SurveyContent extends Component {
   constructor() {
@@ -74,23 +75,31 @@ class SurveyContent extends Component {
     return (
       <div>
         <div className="container-fluid text-center">
-          <h4>Over the past few days, how often have you been bothered by any of the following problems?</h4>
-          <h3>{this.surveys['GAD-7'][this.state.question_id]}</h3>
-          <FormGroup>
-           <Radio name="qs" inline value="0" onChange={this.handleChange} defaultChecked={false}>
-             Not at all
-           </Radio>
-           <Radio name="qs" inline value="1" onChange={this.handleChange}>
-             Some of the time
-           </Radio>
-           <Radio name="qs" inline value="2" onChange={this.handleChange}>
-             More than half of the time
-           </Radio>
-           <Radio name="qs" inline value="3" onChange={this.handleChange}>
-             Nearly all the time
-           </Radio>
-          </FormGroup>
-          <Button onClick={this.handleClick}>{this.state.survey_status}</Button>
+          <Grid>
+              <Row>
+                <Col xs={12} sm={8} smOffset={2}>
+                  <div className="">
+                    <h4>Over the past few days, how often have you been bothered by any of the following problems?</h4>
+                    <h3>{this.surveys['GAD-7'][this.state.question_id]}</h3>
+                    <FormGroup>
+                     <Radio name="qs" inline value="0" onChange={this.handleChange} defaultChecked={false} className="radio_btn">
+                       Not at all
+                     </Radio>
+                     <Radio name="qs" inline value="1" onChange={this.handleChange} className="radio_btn">
+                       Some of the time
+                     </Radio>
+                     <Radio name="qs" inline value="2" onChange={this.handleChange} className="radio_btn">
+                       More than half of the time
+                     </Radio>
+                     <Radio name="qs" inline value="3" onChange={this.handleChange} className="radio_btn">
+                       Nearly all the time
+                     </Radio>
+                    </FormGroup>
+                    <Button onClick={this.handleClick}>{this.state.survey_status}</Button>
+                   </div>
+                  </Col>
+                </Row>
+            </Grid>
          </div>
         {this.renderRedirect()}
       </div>
