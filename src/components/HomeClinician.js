@@ -5,18 +5,24 @@ import { Jumbotron } from 'react-bootstrap'
 
 import Header from './Header'
 import SideNavC from './SideNavC'
+import AddUser from './AddUser'
 import '../assets/homeUser.css'
 
 class HomeClinician extends Component {
   constructor() {
     super()
 
-    this.state = {users: [], usersToChild: []}
+    this.state = {
+      users: [],
+      usersToChild: [],
+      c_id: ''
+    }
   }
 
   componentWillMount() {
     let cookies = new Cookies()
     let c_id = cookies.get('id')
+    this.setState({ c_id: c_id })
     fetch(`http://localhost:3000/v1/clinicians/${c_id}`)
     .then(res => {
       return res.json().then((clinician) => {
@@ -32,6 +38,8 @@ class HomeClinician extends Component {
 
   render() {
     let usersToChild = this.state.usersToChild
+    let c_id = this.state.c_id
+
     return (
       <div>
         <SideNavC usersToChild={usersToChild} />
@@ -42,6 +50,7 @@ class HomeClinician extends Component {
             <ul>
             {this.state.users}
             </ul>
+            <AddUser c_id={c_id}/>
           </Jumbotron>
         </div>
       </div>
