@@ -3,9 +3,7 @@ import
   { FormGroup,
     FormControl,
     HelpBlock,
-    Button,
-    ButtonGroup,
-    Col
+    Button
   } from 'react-bootstrap'
 
 class AddUser extends Component {

@@ -33,17 +33,19 @@ class SurveyContent extends Component {
     this.renderRedirect = this.renderRedirect.bind(this)
   }
 
+
   handleClick() {
-    let score = this.state.score + this.state.current_choice
+    let score_val = this.state.score + this.state.current_choice
+    console.log(score_val);
     if (this.state.question_id === (this.surveys['GAD-7'].length -2)) {
         this.setState({ survey_status: 'Submit Survey'})
     }
-    if (this.state.question_id === (this.surveys['GAD-7'].length -1)) {
+    else if (this.state.question_id === (this.surveys['GAD-7'].length -1)) {
       let cookies = new Cookies()
       let user_id = +cookies.get('id')
       fetch(`http://localhost:3000/v1/scores`, {
         method: 'POST',
-        body: JSON.stringify({ score_value: score, user_id: user_id, measure_id: 2}),
+        body: JSON.stringify({ score_value: score_val, user_id: user_id, measure_id: 2}),
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -52,10 +54,10 @@ class SurveyContent extends Component {
         this.setState({redirect: true})
       })
 
-    } else {
-      let question_id = +this.state.question_id + 1
-      this.setState({score: score, question_id: question_id, current_choice: 0, disabled: true, checked: false})
     }
+    let question_id = +this.state.question_id + 1
+    this.setState({score: score_val, question_id: question_id, disabled: true, checked: false})
+    console.log(this.state);
   }
 
     handleChange(e) {
@@ -72,10 +74,10 @@ class SurveyContent extends Component {
     return (
       <div>
         <div className="container-fluid text-center">
-          <h4>Over the few days, how often have you been bothered by any of the following problems?</h4>
+          <h4>Over the past few days, how often have you been bothered by any of the following problems?</h4>
           <h3>{this.surveys['GAD-7'][this.state.question_id]}</h3>
           <FormGroup>
-           <Radio name="qs" inline value="0" onChange={this.handleChange}>
+           <Radio name="qs" inline value="0" onChange={this.handleChange} defaultChecked={false}>
              Not at all
            </Radio>
            <Radio name="qs" inline value="1" onChange={this.handleChange}>
@@ -88,7 +90,7 @@ class SurveyContent extends Component {
              Nearly all the time
            </Radio>
           </FormGroup>
-          <Button onClick={this.handleClick} disabled={this.state.disabled}>{this.state.survey_status}</Button>
+          <Button onClick={this.handleClick}>{this.state.survey_status}</Button>
          </div>
         {this.renderRedirect()}
       </div>

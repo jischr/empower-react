@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Cookies } from 'react-cookie'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { Jumbotron } from 'react-bootstrap'

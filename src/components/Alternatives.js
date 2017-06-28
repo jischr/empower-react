@@ -3,8 +3,7 @@ import
   { FormGroup,
     FormControl,
     HelpBlock,
-    Button,
-    ButtonGroup,
+    Button
   } from 'react-bootstrap'
 
 import { Cookies } from 'react-cookie'
@@ -56,7 +55,6 @@ class Alternatives extends Component {
       }
     }).then(res => {
       return res.json().then((res) => {
-        console.log(res)
         let alts = this.state.alt_ideas
         let newAlt = (<li key={res.id} className="alt-list-text text-center">{res.text}</li>)
         alts.push(newAlt)

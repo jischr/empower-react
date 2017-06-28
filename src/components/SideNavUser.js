@@ -5,7 +5,6 @@ import { Cookies } from 'react-cookie'
 
 import '../assets/sidenav.css'
 import Phone from '../assets/images/phone.svg'
-import Waves from '../assets/images/waves.jpg'
 
 class Sidebar extends Component {
   constructor() {
@@ -33,7 +32,6 @@ class Sidebar extends Component {
           <hr />
           <Link to="/home" className="sidenav_link">Take a Survey</Link>
           <hr />
-          <img src={Waves} alt="waves" className="waves_image"/>
           <div className="well well-lg crisis_div">
             <h3>Need Help?</h3>
             <p className="bold_header">Help is Just Phone Call Away</p>
