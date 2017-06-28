@@ -6,7 +6,7 @@ import
     Button,
     ButtonGroup,
   } from 'react-bootstrap'
-
+import WordCloud from 'react-d3-cloud';
 import { Cookies } from 'react-cookie'
 
 class Alternatives extends Component {
@@ -15,7 +15,7 @@ class Alternatives extends Component {
 
     this.state = {
       text: '',
-      alt_ideas: '',
+      alt_ideas: [],
       name: ''
     }
     this.handleChange = this.handleChange.bind(this)
@@ -31,8 +31,11 @@ class Alternatives extends Component {
       return res.json().then((user) => {
         if (user.alternatives) {
           let alt_ideas = user.alternatives.map((alt) => {
-            return (<li key={alt.id} className="alt-list-text text-center">{alt.text}</li>)
+            // return (<li key={alt.id} className="alt-list-text text-center">{alt.text}</li>)
+            let rand = Math.random()*10
+            return {text: alt.text, value: rand}
           })
+          console.log(alt_ideas)
           this.setState({alt_ideas: alt_ideas, name: user.first_name})
         }
       })
@@ -58,20 +61,31 @@ class Alternatives extends Component {
       return res.json().then((res) => {
         console.log(res)
         let alts = this.state.alt_ideas
-        let newAlt = (<li key={res.id} className="alt-list-text text-center">{res.text}</li>)
-        alts.push(newAlt)
+        // let newAlt = (<li key={res.id} className="alt-list-text text-center">{res.text}</li>)
+        let rand = Math.random()*100
+        alts.push({text: res.text, value: rand})
         this.setState({alt_ideas: alts})
+        console.log(this.state.alt_ideas);
       })
     })
     this.setState({text: ''})
   }
 
   render() {
+//     console.log(this.state.alt_ideas);
+//     let alts =
+//
+const fontSizeMapper = word => Math.log2(word.value) * 5;
+
+    let alt_ideas = this.state.alt_ideas
+    console.log(typeof alt_ideas)
     return (
       <div>
-      <ul>
-        {this.state.alt_ideas}
-      </ul>
+        <WordCloud
+          data={alt_ideas}
+          fontSizeMapper={fontSizeMapper}
+          // rotate={rotate}
+        />
       <form onSubmit={this.handleClick}>
         <FormGroup>
           <FieldGroup
