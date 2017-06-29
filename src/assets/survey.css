@@ -65,7 +65,7 @@
   margin-left: 0.38em;
 }
 
-.answer_side button, button:hover, button:active, .btn-default:hover, .btn-default:active  {
+.answer_side button, .answer_side button:hover, .answer_side button:active, .answer_side .btn-default:hover, .answer_side .btn-default:active  {
   align-item: left;
   border-radius: 1px;
   border: none;
