@@ -30,7 +30,7 @@ class HomeClinician extends Component {
         let usersToChild = []
         let users = clinician.users.map((user) => {
           usersToChild.push(user)
-          return (<li key={user.patient_number} className="alt-list-text text-center"><Link to="/home">{user.first_name} {user.last_name}</Link></li>)
+          return (<li key={user.patient_number} className="alt-list-text text-center"><Link to={`/graph/${user.patient_number}`}>{user.first_name} {user.last_name}</Link></li>)
         })
         this.setState({users: users, usersToChild: usersToChild})
       })
@@ -45,7 +45,9 @@ class HomeClinician extends Component {
       <div>
         <SideNavC usersToChild={usersToChild} />
         <Header />
+
         <div className="container">
+        {window.location.href.split('/')[3] === 'home' &&
           <Jumbotron>
             <h1 className="text-center">Your Patients:</h1>
             <ul>
@@ -53,7 +55,11 @@ class HomeClinician extends Component {
             </ul>
             <AddUser c_id={c_id}/>
           </Jumbotron>
-          <Charts />
+          }
+          {window.location.href.split('/')[3] === 'graph' &&
+            <Charts />
+        }
+
         </div>
       </div>
     )

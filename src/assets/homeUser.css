@@ -3,7 +3,8 @@
 }
 
 .welcome {
-  background-color: #F9EDDB;
+  margin-left: -5em;
+  background-color: rgb(237, 237, 237);
   border-bottom: 0px;
 }
 
@@ -12,8 +13,10 @@
 }
 
 .welcome h2 {
+  text-align: left;
   margin: 0px;
 }
+
 .alternatives {
   /*background-color: #90A9B7;*/
   height: 30em;
@@ -28,4 +31,14 @@
   /*text-transform: uppercase;*/
   line-height: 2em;
   font-size: 2em;
+}
+
+.footer {
+  background-color: rgb(23, 54, 71);
+  color: rgb(235, 238, 238);
+  height: 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

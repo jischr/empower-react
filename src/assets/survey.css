@@ -1,4 +1,76 @@
-.radio_btn {
+.question_side {
+  height: 750px;;
+  margin-top: -1.5em;
+  background-color: rgb(58, 138, 158);
+  color: rgb(232, 232, 232);
+  font-weight: 200;
+}
+
+.question_side h4 {
+  font-size: 2.75em;
+  text-transform: uppercase;
+  padding: 2em 2em 1em 2em;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(23, 54, 71);
+}
+
+.question_side span {
+  font-weight: 200;
+  font-size: .8em;
+}
+
+.question_side hr {
+  margin: 0 3em 1em 3em;
+}
+
+.question_side h3 {
+  font-size: 2.75em;
+  font-weight: 500;
+  color: rgb(215, 218, 219);
+  padding: 0.5em 2.25em 1em 2.25em;
+  text-align: center;
+}
+
+.arrow_logo {
+  background-color: rgb(58, 138, 158);
+  margin-left: 46em;
+  margin-top: -3.75em;
+  height: 5em;
+}
+
+.answer_side {
+  height: 750px;;
+  margin-top: -1.5em;
+  background-color: rgb(23, 54, 71);
+  color: rgb(232, 232, 232);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer_side .radio_btn {
+  font-size: 2em;
   display: block;
-  font-size: 1.2em;
+  font-weight: 200;
+}
+
+.answer_side .form-group {
+  margin-bottom: 5em;
+}
+
+.answer_side .first {
+  font-size: 2em;
+  margin-left: 0.38em;
+}
+
+.answer_side button, button:hover, button:active, .btn-default:hover, .btn-default:active  {
+  align-item: left;
+  border-radius: 1px;
+  border: none;
+  background-color: rgb(58, 138, 158);
+  color: rgb(232, 232, 232);
+  font-size: 1.25em;
+  text-transform: uppercase;
 }

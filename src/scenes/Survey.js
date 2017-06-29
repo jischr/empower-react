@@ -19,12 +19,7 @@ class Survey extends Component {
         <div>
           <SideNavUser />
           <Header />
-          <div className="container">
-            <Jumbotron className="alternatives">
-              <SurveyContent />
-            </Jumbotron>
-          </div>
-
+          <SurveyContent />
         </div>
       )
     }

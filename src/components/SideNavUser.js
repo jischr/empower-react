@@ -30,7 +30,7 @@ class Sidebar extends Component {
       	<Modal.Body>
           <Link to="/" onClick={this.logout} className="sidenav_link">Logout</Link>
           <hr />
-          <Link to="/home" className="sidenav_link">Take a Survey</Link>
+          <Link to="/survey" className="sidenav_link">Take a Survey</Link>
           <hr />
           <div className="well well-lg crisis_div">
             <h3>Need Help?</h3>
