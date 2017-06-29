@@ -46,15 +46,13 @@
   align-items: center;
 }
 
-.alternatives button, button:hover, button:active, .btn-default:hover, .btn-default:active  {
+.alternatives button, .alternatives button:hover, .alternatives button:active, .alternatives .btn-default:hover, .alternatives .btn-default:active  {
   margin-left: 10px;
-  align-item: left;
   border-radius: 1px;
   border: none;
   background-color: rgb(58, 138, 158);
   color: rgb(232, 232, 232);
   font-size: .5em;
-  /*text-transform: uppercase;*/
   height: 30px;
   width: 30px;
   padding: 0px;
