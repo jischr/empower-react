@@ -8,6 +8,8 @@ import
 import WordCloud from 'react-d3-cloud';
 import { Cookies } from 'react-cookie'
 
+import Plus from '../assets/images/plus.svg'
+
 class Alternatives extends Component {
   constructor() {
     super()
@@ -30,9 +32,9 @@ class Alternatives extends Component {
       return res.json().then((user) => {
         if (user.alternatives) {
           let alt_ideas = user.alternatives.map((alt) => {
-            // return (<li key={alt.id} className="alt-list-text text-center">{alt.text}</li>)
-            let rand = Math.random()*10
-            return {text: alt.text, value: rand}
+            return (<p key={alt.id} className="alt-list-text text-center">{alt.text}</p>)
+            // let rand = Math.random()*10
+            // return {text: alt.text, value: rand}
           })
           console.log(alt_ideas)
           this.setState({alt_ideas: alt_ideas, name: user.first_name})
@@ -59,9 +61,9 @@ class Alternatives extends Component {
     }).then(res => {
       return res.json().then((res) => {
         let alts = this.state.alt_ideas
-        // let newAlt = (<li key={res.id} className="alt-list-text text-center">{res.text}</li>)
-        let rand = Math.random()*100
-        alts.push({text: res.text, value: rand})
+        let newAlt = (<p key={res.id} className="alt-list-text text-center">{res.text}</p>)
+        // let rand = Math.random()*100
+        alts.push(newAlt)
         this.setState({alt_ideas: alts})
         console.log(this.state.alt_ideas);
       })
@@ -70,34 +72,26 @@ class Alternatives extends Component {
   }
 
   render() {
-//     console.log(this.state.alt_ideas);
-//     let alts =
-//
-const fontSizeMapper = word => Math.log2(word.value) * 5;
-
-    let alt_ideas = this.state.alt_ideas
-    console.log(typeof alt_ideas)
     return (
-      <div>
-        <WordCloud
-          data={alt_ideas}
-          fontSizeMapper={fontSizeMapper}
-          // rotate={rotate}
-        />
-      <form onSubmit={this.handleClick}>
-        <FormGroup>
-          <FieldGroup
-            id="formControlsAlt"
-            type="text"
-            placeholder="Enter an Alternative"
-            onChange = {this.handleChange}
-            required={true}
-            value ={this.state.text}
-          />
-        </FormGroup>
-        <Button type="submit">+ Alternative</Button>
-      </form>
-      </div>
+        <div className="alternatives text-center">
+            <h1>ALTERNATIVES</h1>
+            <div>
+              {this.state.alt_ideas}
+            </div>
+            <form onSubmit={this.handleClick}>
+              <FormGroup className="alt-form">
+                <FieldGroup
+                  id="formControlsAlt"
+                  type="text"
+                  placeholder="Enter an Alternative"
+                  onChange = {this.handleChange}
+                  required={true}
+                  value ={this.state.text}
+                />
+              </FormGroup>
+              <Button type="submit"><img src={Plus} alt="add-new-alternative"/></Button>
+            </form>
+        </div>
     )
   }
 

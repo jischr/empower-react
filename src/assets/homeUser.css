@@ -6,6 +6,7 @@
   margin-left: -5em;
   background-color: rgb(237, 237, 237);
   border-bottom: 0px;
+  margin: 0px;
 }
 
 .welcome-sun {
@@ -18,19 +19,79 @@
 }
 
 .alternatives {
-  /*background-color: #90A9B7;*/
-  height: 30em;
+  background-color: rgba(255, 255, 255, .6);
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.alternatives input {
+  margin-top: 25px;
+}
+
+.alt-form {
+  display: inline-block;
+}
+.home-right {
+  background-image: url('./images/alternatives2.jpg');
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.alternatives button, button:hover, button:active, .btn-default:hover, .btn-default:active  {
+  margin-left: 10px;
+  align-item: left;
+  border-radius: 1px;
+  border: none;
+  background-color: rgb(58, 138, 158);
+  color: rgb(232, 232, 232);
+  font-size: .5em;
+  /*text-transform: uppercase;*/
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+}
+
+.home-right h1 {
+  font-weight: 700;
+  color: #33A7BE;
+}
+
+.home-left {
+  background-color: #33A7BE;
+  height:700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(23, 54, 71);
+}
+
+.home-left h1 {
+  font-weight: 700;
+  font-size:4em;
+  margin-bottom: 0px;
+}
+
+.home-left h3 {
+  font-family: 'Sacramento', sans-serif;
+  margin-top: 7px;
+  font-size: 2.5em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
 .alt-list-text {
   list-style: none;
-  /*text-transform: uppercase;*/
-  line-height: 2em;
-  font-size: 2em;
+  font-size: 1.5em;
+  padding: 0px;
 }
 
 .footer {
