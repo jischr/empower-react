@@ -38,6 +38,8 @@ class Sidebar extends Component {
       	<Modal.Body>
           <Link to="/" onClick={this.logout} className="sidenav_link">Logout</Link>
           <hr />
+          <Link to="/home" className="sidenav_link">Home</Link>
+          <hr />
           {this.state.users}
         </Modal.Body>
       </Modal>

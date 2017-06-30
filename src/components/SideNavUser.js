@@ -32,6 +32,8 @@ class Sidebar extends Component {
           <hr />
           <Link to="/survey" className="sidenav_link">Take a Survey</Link>
           <hr />
+          <Link to="/home" className="sidenav_link">Home</Link>
+          <hr />
           <div className="well well-lg crisis_div">
             <h3>Need Help?</h3>
             <p className="bold_header">Help is Just Phone Call Away</p>

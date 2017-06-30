@@ -28,6 +28,10 @@
   margin-top: 10px;
 }
 
+.home_row {
+  margin-top: -1.25em; 
+}
+
 .alternatives {
   background-color: rgba(255, 255, 255, .6);
   width: 75%;

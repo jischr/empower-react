@@ -18,10 +18,10 @@ class HomeUser extends Component {
         <SideNavUser />
         <Header />
         <div>
-          <Row>
+          <Row className="home_row">
             <Col md={6} className="home-left">
               <div className="text-center">
-                <h1>EmpowerU</h1>
+                <h1>Empower</h1>
                 <h3>putting you back in charge</h3>
                 <hr></hr>
               </div>

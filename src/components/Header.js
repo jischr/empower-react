@@ -28,6 +28,7 @@ class Header extends Component {
       fetch(`http://localhost:3000/v1/clinicians/${id}`)
       .then(res => {
           return res.json().then((clinician) => {
+            console.log('clinician', clinician)
             let full_name = `${clinician.first_name} ${clinician.last_name}`
             this.setState({name: full_name})
           })
