@@ -6,7 +6,9 @@ import
     HelpBlock,
     Button,
     ButtonGroup,
-    Col
+    Col,
+    ControlLabel,
+    Row
   } from 'react-bootstrap'
 
 class SignupForm extends Component {
@@ -141,6 +143,43 @@ class SignupForm extends Component {
               onChange={this.handleEmailChange}
               required={true}
             />
+            {this.state.isUser &&
+            <Col xs={6} className="grid-form-left">
+              <FormGroup>
+              <ControlLabel>Birth Date</ControlLabel>
+              <FieldGroup
+                id="formControlsBirthDate"
+                type="date"
+                placeholder="Birth Date"
+                // onChange={this.handlePhoneNumberChange}
+                required={true}
+              />
+              </FormGroup>
+            </Col>
+            }
+            {this.state.isUser &&
+            <Col xs={6} className="grid-form-right">
+              <FormGroup controlId="formControlsSelect">
+              <ControlLabel>Sex</ControlLabel>
+              <FormControl componentClass="select" placeholder="select">
+                <option selected={true} disabled={true}>Select Sex</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                </FormControl>
+              </FormGroup>
+            </Col>
+            }
+            {this.state.isUser &&
+              <FormGroup controlId="formControlsSelect">
+                <FormControl componentClass="select" placeholder="select">
+                  <option selected={true} disabled={true}>Years of Education after High School</option>
+                  <option value="a">0</option>
+                  <option value="b">2-4 (Associates or Bachelor's degree)</option>
+                  <option value="c">>5 (Post-Bachelor's degree)</option>
+                  </FormControl>
+              </FormGroup>
+
+            }
             {this.state.isUser &&
               <FieldGroup
                 id="formControlsPhoneNumber"
