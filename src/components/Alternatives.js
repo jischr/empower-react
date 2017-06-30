@@ -34,7 +34,6 @@ class Alternatives extends Component {
           let alt_ideas = user.alternatives.map((alt) => {
             return (<p key={alt.id} className="alt-list-text text-center">{alt.text}</p>)
           })
-          console.log(alt_ideas)
           this.setState({alt_ideas: alt_ideas, name: user.first_name})
         }
       })
@@ -62,7 +61,6 @@ class Alternatives extends Component {
         let newAlt = (<p key={res.id} className="alt-list-text text-center">{res.text}</p>)
         alts.push(newAlt)
         this.setState({alt_ideas: alts})
-        console.log(this.state.alt_ideas);
       })
     })
     this.setState({text: ''})

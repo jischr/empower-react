@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import { Cookies } from 'react-cookie'
 import { Link } from 'react-router-dom'
-import { Jumbotron } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 import Header from './Header'
 import Charts from './Charts'
 import SideNavC from './SideNavC'
 import AddUser from './AddUser'
-import '../assets/homeUser.css'
+import '../assets/homeClinician.css'
 
 class HomeClinician extends Component {
   constructor() {
@@ -45,22 +45,28 @@ class HomeClinician extends Component {
       <div>
         <SideNavC usersToChild={usersToChild} />
         <Header />
-
-        <div className="container">
+        <Row className="home_clinician">
         {window.location.href.split('/')[3] === 'home' &&
-          <Jumbotron>
-            <h1 className="text-center">Your Patients:</h1>
-            <ul>
-            {this.state.users}
-            </ul>
-            <AddUser c_id={c_id}/>
-          </Jumbotron>
+          <div>
+            <Col sm={6} className="add_user">
+              <AddUser c_id={c_id}/>
+            </Col>
+            <Col sm={6} className="patient_list">
+              <p><span>Track patient progress</span> <br /> to help them better understand their anxiety</p>
+              <div className="patient_div">
+                <h5>Select a Patient :</h5>
+                <ul>
+                  {this.state.users}
+                </ul>
+              </div>
+              <h6>basic information | GAD-7 scores | SMS reminders</h6>
+            </Col>
+          </div>
           }
           {window.location.href.split('/')[3] === 'graph' &&
             <Charts />
         }
-
-        </div>
+        </Row>
       </div>
     )
   }

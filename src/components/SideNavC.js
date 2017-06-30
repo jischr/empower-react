@@ -20,8 +20,7 @@ class Sidebar extends Component {
 
   componentWillReceiveProps(nextProps) {
     let users = nextProps.users.map((user) => {
-      console.log(user)
-      return (<Link to={`/graph/${user.patient_number}`} onClick={this.logout} className="sidenav_link" key={user.patient_number}>{user.first_name} {user.last_name}</Link>)
+      return (<Link to={`/graph/${user.patient_number}`} className="sidenav_link" key={user.patient_number}>{user.first_name} {user.last_name}</Link>)
     })
 
     this.setState({users: users})
