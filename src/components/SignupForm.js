@@ -11,6 +11,8 @@ import
     Row
   } from 'react-bootstrap'
 
+import { API_URL } from '../config'
+
 class SignupForm extends Component {
   constructor() {
     super()
@@ -69,7 +71,7 @@ class SignupForm extends Component {
       userData['practice'] = this.state.practice
     }
 
-    fetch(`http://localhost:3000/v1/${userStatus}`, {
+    fetch(`${API_URL}/v1/${userStatus}`, {
       method: 'POST',
       body: JSON.stringify(userData),
       headers: {

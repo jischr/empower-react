@@ -5,6 +5,8 @@ import
     HelpBlock,
     Button
   } from 'react-bootstrap'
+import { API_URL } from '../config'
+
 
 class AddUser extends Component {
   constructor(props) {
@@ -33,7 +35,7 @@ class AddUser extends Component {
   handleSubmit(e) {
     e.preventDefault()
     let patient_number = this.state.patient_number
-    fetch(`http://localhost:3000/v1/users/${patient_number}`, {
+    fetch(`${API_URL}/v1/users/${patient_number}`, {
       method: 'PATCH',
       body: JSON.stringify({ clinician_id: this.props.c_id}),
       headers: {

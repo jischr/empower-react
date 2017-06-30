@@ -7,6 +7,7 @@ import
   } from 'react-bootstrap'
 import WordCloud from 'react-d3-cloud';
 import { Cookies } from 'react-cookie'
+import { API_URL } from '../config'
 
 import Plus from '../assets/images/plus.svg'
 
@@ -27,7 +28,7 @@ class Alternatives extends Component {
     let cookie = new Cookies()
     let user_id = cookie.get('id')
 
-    fetch(`http://localhost:3000/v1/users/${user_id}`)
+    fetch(`${API_URL}/v1/users/${user_id}`)
     .then(res => {
       return res.json().then((user) => {
         if (user.alternatives) {
@@ -49,7 +50,7 @@ class Alternatives extends Component {
     let cookies = new Cookies()
     let user_id = cookies.get('id')
     e.preventDefault()
-    fetch(`http://localhost:3000/v1/alternatives`, {
+    fetch(`${API_URL}/v1/alternatives`, {
       method: 'POST',
       body: JSON.stringify({ text: this.state.text, user_id: user_id}),
       headers: {

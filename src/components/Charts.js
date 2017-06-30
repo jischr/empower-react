@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { API_URL } from '../config'
 
 var LineChart = require('react-chartjs').Line
 
@@ -16,7 +17,7 @@ class Charts extends Component {
 
   componentWillMount() {
     let user_id = window.location.href.split('/')[4]
-    fetch(`http://localhost:3000/v1/users/scores/${user_id}`)
+    fetch(`${API_URL}/v1/users/scores/${user_id}`)
     .then(res => {
       return res.json().then((user) => {
         let label_list = []

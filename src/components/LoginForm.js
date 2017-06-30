@@ -9,6 +9,7 @@ import
   } from 'react-bootstrap'
 import { Cookies } from 'react-cookie'
 
+import { API_URL } from '../config'
 import '../assets/Landing.css'
 
 class LoginForm extends Component {
@@ -39,7 +40,7 @@ class LoginForm extends Component {
   handleLogin(e) {
     e.preventDefault()
     let userStatus = this.state.isUser ? 'user' : 'clinician'
-    fetch(`http://localhost:3000/authenticate/${userStatus}`, {
+    fetch(`${API_URL}/authenticate/${userStatus}`, {
       method: 'POST',
       body: JSON.stringify({ email: this.state.email, password: this.state.password}),
       headers: {

@@ -3,6 +3,7 @@ import { FormGroup, Radio, Button, Grid, Col, Row } from 'react-bootstrap'
 import { Cookies } from 'react-cookie'
 import { Redirect } from 'react-router-dom'
 
+import { API_URL } from '../config'
 import '../assets/survey.css'
 import Arrow from '../assets/images/chevrons-right.svg'
 
@@ -44,7 +45,7 @@ class SurveyContent extends Component {
     else if (this.state.question_id === (this.surveys['GAD-7'].length -1)) {
       let cookies = new Cookies()
       let user_id = +cookies.get('id')
-      fetch(`http://localhost:3000/v1/scores`, {
+      fetch(`${API_URL}/v1/scores`, {
         method: 'POST',
         body: JSON.stringify({ score_value: score_val, user_id: user_id, measure_id: 2}),
         headers: {
