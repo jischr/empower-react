@@ -33,8 +33,6 @@ class Alternatives extends Component {
         if (user.alternatives) {
           let alt_ideas = user.alternatives.map((alt) => {
             return (<p key={alt.id} className="alt-list-text text-center">{alt.text}</p>)
-            // let rand = Math.random()*10
-            // return {text: alt.text, value: rand}
           })
           console.log(alt_ideas)
           this.setState({alt_ideas: alt_ideas, name: user.first_name})
@@ -62,7 +60,6 @@ class Alternatives extends Component {
       return res.json().then((res) => {
         let alts = this.state.alt_ideas
         let newAlt = (<p key={res.id} className="alt-list-text text-center">{res.text}</p>)
-        // let rand = Math.random()*100
         alts.push(newAlt)
         this.setState({alt_ideas: alts})
         console.log(this.state.alt_ideas);

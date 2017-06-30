@@ -116,12 +116,17 @@
   margin-bottom: 18px;
 }
 
+.survey-side {
+  margin-bottom: 0px;
+}
+
 .crisis_div {
   width: 100%;
   background-color: rgb(26, 62, 80);
   border-radius: 0px;
   border: 0px;
-  margin-top: 22em;
+  /*margin-top: 22em;*/
+  margin-bottom: 0px;
 }
 
 .crisis_div h3 {

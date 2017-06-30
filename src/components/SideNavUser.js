@@ -34,6 +34,10 @@ class Sidebar extends Component {
           <hr />
           <Link to="/home" className="sidenav_link">Home</Link>
           <hr />
+          <div className="well well-lg survey-side">
+            <h3>Why SURVEYS?</h3>
+            <p>These surveys provide a SNAPSHOT into your feelings at a particular moment. With a bunch of vantage points, you and your doctor can more accurately assess how you are feeling. <br/><br/>Studies have shown that just the act of recording your thoughts reduces your anxiety. Why not give it a try?</p>
+          </div>
           <div className="well well-lg crisis_div">
             <h3>Need Help?</h3>
             <p className="bold_header">Help is Just Phone Call Away</p>
