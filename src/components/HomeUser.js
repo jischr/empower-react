@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { Jumbotron,
-Grid,
-Row,
-Col } from 'react-bootstrap'
+import { Grid,
+         Row,
+         Col } from 'react-bootstrap'
 
 import SideNavUser from './SideNavUser'
 import Alternatives from './Alternatives'

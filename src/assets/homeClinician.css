@@ -1,0 +1,82 @@
+.add_user {
+  background-color: rgb(47, 127, 149);
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1.25em;
+  color: rgb(23, 54, 71);
+}
+
+.enter_patient_form {
+  width: 30em;
+}
+
+.add_user span {
+  font-size: 0.4em;
+}
+
+.add_user h2 {
+  font-size: 4em;
+  font-family: 'Sacramento', sans-serif;
+}
+
+.add_user button, .add_user button:hover, .add_user button:active, .add_user .btn-default:hover, .add_user .btn-default:active  {
+  align-item: left;
+  border-radius: 1px;
+  border: none;
+  background-color: rgb(34, 77, 101);
+  color: rgb(232, 232, 232);
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+.patient_list {
+  background-color: rgb(23, 54, 71);
+  margin-top: -1.25em;
+  color: rgb(237, 237, 237);
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.patient_list a {
+  color: rgb(237, 237, 237);
+  margin-left: -2em;
+  font-size: 1.1em;
+}
+
+.patient_list p {
+  color: rgb(47, 127, 149);
+  font-size: 1.65em;
+  font-weight: 200;
+  /*margin-top: -4em;*/
+}
+
+.patient_list span {
+  font-size: 1.65em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(47, 127, 149);
+}
+
+.patient_div {
+  background-color: rgba(237, 237, 237, .5);
+  padding: 3em;
+  margin: 1.5em;
+}
+
+.patient_list h5 {
+  font-size: 2em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.patient_list h6 {
+  font-size: 1.25em;
+  padding-bottom: 5px;
+  font-weight: 200;
+}

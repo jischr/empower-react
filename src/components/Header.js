@@ -16,24 +16,14 @@ class Header extends Component {
   componentWillMount() {
     let cookies = new Cookies()
     let id = cookies.get('id')
-    if (cookies.get('isUser')){
-      fetch(`http://localhost:3000/v1/users/${id}`)
-      .then(res => {
-          return res.json().then((user) => {
-            let full_name = `${user.first_name} ${user.last_name}`
-            this.setState({name: full_name})
-          })
+    let userStatus = +cookies.get('isUser') ? 'users' : 'clinicians'
+    fetch(`http://localhost:3000/v1/${userStatus}/${id}`)
+    .then(res => {
+      return res.json().then((user) => {
+        let full_name = `${user.first_name} ${user.last_name}`
+        this.setState({name: full_name})
       })
-    } else {
-      fetch(`http://localhost:3000/v1/clinicians/${id}`)
-      .then(res => {
-          return res.json().then((clinician) => {
-            console.log('clinician', clinician)
-            let full_name = `${clinician.first_name} ${clinician.last_name}`
-            this.setState({name: full_name})
-          })
-      })
-    }
+    })
   }
 
   render() {
