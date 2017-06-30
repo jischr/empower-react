@@ -23,6 +23,9 @@ class SignupForm extends Component {
       last_name: null,
       practice: null,
       phone_number: null,
+      sex: null,
+      education: null,
+      birth_date: null,
       errors: [],
       redirect: false,
       form_incomplete: true
@@ -37,6 +40,9 @@ class SignupForm extends Component {
     this.handleLastNameChange = this.handleLastNameChange.bind(this)
     this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this)
     this.handlePracticeChange = this.handlePracticeChange.bind(this)
+    this.handleBirthDateChange = this.handleBirthDateChange.bind(this)
+    this.handleSexChange = this.handleSexChange.bind(this)
+    this.handleEducationChange = this.handleEducationChange.bind(this)
   }
 
   handleRedirect() {
@@ -54,6 +60,9 @@ class SignupForm extends Component {
       userStatus = 'users'
       userData['phone_number'] = this.state.phone_number
       userData['patient_number'] =  Math.random().toString(36).substring(7)
+      userData['education'] = this.state.education
+      userData['sex'] = this.state.sex
+      userData['birth_date'] = this.state.birth_date
     }
     else {
       userStatus = 'clinicians'
@@ -106,6 +115,16 @@ class SignupForm extends Component {
   handlePracticeChange(e) {
     this.setState({ practice: e.target.value})
   }
+  handleBirthDateChange(e) {
+    this.setState({ birth_date: e.target.value})
+  }
+  handleSexChange(e) {
+    this.setState({ sex: e.target.value})
+  }
+  handleEducationChange(e) {
+    this.setState({ education: e.target.value})
+  }
+
   render() {
     return (
       <div>
@@ -144,6 +163,7 @@ class SignupForm extends Component {
               required={true}
             />
             {this.state.isUser &&
+            <div>
             <Col xs={6} className="grid-form-left">
               <FormGroup>
               <ControlLabel>Birth Date</ControlLabel>
@@ -151,43 +171,37 @@ class SignupForm extends Component {
                 id="formControlsBirthDate"
                 type="date"
                 placeholder="Birth Date"
-                // onChange={this.handlePhoneNumberChange}
+                onChange={this.handleBirthDateChange}
                 required={true}
               />
               </FormGroup>
             </Col>
-            }
-            {this.state.isUser &&
             <Col xs={6} className="grid-form-right">
               <FormGroup controlId="formControlsSelect">
               <ControlLabel>Sex</ControlLabel>
-              <FormControl componentClass="select" placeholder="select">
+              <FormControl componentClass="select" placeholder="select"         onChange={this.handleSexChange}>
                 <option selected={true} disabled={true}>Select Sex</option>
                 <option value="M">Male</option>
                 <option value="F">Female</option>
                 </FormControl>
               </FormGroup>
             </Col>
-            }
-            {this.state.isUser &&
-              <FormGroup controlId="formControlsSelect">
-                <FormControl componentClass="select" placeholder="select">
-                  <option selected={true} disabled={true}>Years of Education after High School</option>
-                  <option value="a">0</option>
-                  <option value="b">2-4 (Associates or Bachelor's degree)</option>
-                  <option value="c">>5 (Post-Bachelor's degree)</option>
-                  </FormControl>
-              </FormGroup>
-
-            }
-            {this.state.isUser &&
-              <FieldGroup
-                id="formControlsPhoneNumber"
-                type="text"
-                placeholder="Phone Number"
-                onChange={this.handlePhoneNumberChange}
-                required={true}
-              />
+            <FormGroup controlId="formControlsSelect">
+              <FormControl componentClass="select" placeholder="select" onChange={this.handleEducationChange}>
+                <option selected={true} disabled={true}>Years of Education after High School</option>
+                <option value="0">&lt; 2</option>
+                <option value="2">2-4 years (Associates or Bachelor's degree)</option>
+                <option value="5">> 4 (Post-Bachelor's degree)</option>
+                </FormControl>
+            </FormGroup>
+            <FieldGroup
+              id="formControlsPhoneNumber"
+              type="text"
+              placeholder="Phone Number"
+              onChange={this.handlePhoneNumberChange}
+              required={true}
+            />
+            </div>
             }
             {!this.state.isUser &&
               <FieldGroup
