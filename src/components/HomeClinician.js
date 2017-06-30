@@ -3,6 +3,7 @@ import { Cookies } from 'react-cookie'
 import { Link } from 'react-router-dom'
 import { Row, Col } from 'react-bootstrap'
 
+import { API_URL } from '../config'
 import Header from './Header'
 import Charts from './Charts'
 import SideNavC from './SideNavC'
@@ -24,7 +25,7 @@ class HomeClinician extends Component {
     let cookies = new Cookies()
     let c_id = cookies.get('id')
     this.setState({ c_id: c_id })
-    fetch(`http://localhost:3000/v1/clinicians/${c_id}`)
+    fetch(`${API_URL}/v1/clinicians/${c_id}`)
     .then(res => {
       return res.json().then((clinician) => {
         let usersToChild = []

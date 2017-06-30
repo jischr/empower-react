@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Cookies } from 'react-cookie'
 import { Row, Col } from 'react-bootstrap'
 
+import { API_URL } from '../config'
 import '../assets/homeUser.css'
 import Sun from '../assets/images/sun.svg'
 import Man from '../assets/images/user.svg'
@@ -17,7 +18,7 @@ class Header extends Component {
     let cookies = new Cookies()
     let id = cookies.get('id')
     let userStatus = +cookies.get('isUser') ? 'users' : 'clinicians'
-    fetch(`http://localhost:3000/v1/${userStatus}/${id}`)
+    fetch(`${API_URL}/v1/${userStatus}/${id}`)
     .then(res => {
       return res.json().then((user) => {
         let full_name = `${user.first_name} ${user.last_name}`
