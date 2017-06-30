@@ -8,7 +8,6 @@ import
     ButtonGroup,
     Col,
     ControlLabel,
-    Row
   } from 'react-bootstrap'
 
 import { API_URL } from '../config'
@@ -183,17 +182,17 @@ class SignupForm extends Component {
               <ControlLabel>Sex</ControlLabel>
               <FormControl componentClass="select" placeholder="select"         onChange={this.handleSexChange}>
                 <option selected={true} disabled={true}>Select Sex</option>
-                <option value="M">Male</option>
-                <option value="F">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
                 </FormControl>
               </FormGroup>
             </Col>
             <FormGroup controlId="formControlsSelect">
               <FormControl componentClass="select" placeholder="select" onChange={this.handleEducationChange}>
                 <option selected={true} disabled={true}>Years of Education after High School</option>
-                <option value="0">&lt; 2</option>
-                <option value="2">2-4 years (Associates or Bachelor's degree)</option>
-                <option value="5">> 4 (Post-Bachelor's degree)</option>
+                <option value="High School">&lt; 2</option>
+                <option value="Associate's or Bachelor's Degree">2-4 years (Associates or Bachelor's degree)</option>
+                <option value="Post-Bachelor's Degree">> 4 (Post-Bachelor's degree)</option>
                 </FormControl>
             </FormGroup>
             <FieldGroup

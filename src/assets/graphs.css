@@ -1,0 +1,53 @@
+.graph_side {
+  background-color: rgb(47, 127, 149);
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1.25em;
+}
+
+
+.graph_side h1  {
+  margin-bottom: 2em;
+}
+
+
+.user_info_side {
+  background-color: #82b2bf;
+  height: 700px;
+  margin-top: -1.25em;
+}
+
+
+.user_info_side h1 {
+  text-transform: uppercase;
+  margin: 1em;
+}
+
+
+.user_info_side p {
+  font-size: 1.25em;
+  margin: 1em 0 1em 2.5em;
+}
+.user_info_content p {
+  margin: 0;
+}
+.most-recent-heading {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.user_info_side h5 {
+  margin-top: 3em;
+  font-size: 1.2em
+}
+
+.most-recent-score {
+  font-size: 9em;
+}
+
+.user_info_side span {
+  font-weight: 700;
+}

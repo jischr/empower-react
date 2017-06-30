@@ -11,7 +11,7 @@ class Landing extends Component {
         <div className="container-fluid">
           <div className="container-fluid splash">
             <div className="splash-content">
-              <h2 className="text-center splash-heading">EmpowerU</h2>
+              <h2 className="text-center splash-heading">Empower</h2>
               <h4 className="splash-tagline">clinician-led active platform for self management</h4>
               <div className="login text-center">
                 <LoginForm/>

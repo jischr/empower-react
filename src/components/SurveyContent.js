@@ -47,7 +47,7 @@ class SurveyContent extends Component {
       let user_id = +cookies.get('id')
       fetch(`${API_URL}/v1/scores`, {
         method: 'POST',
-        body: JSON.stringify({ score_value: score_val, user_id: user_id, measure_id: 2}),
+        body: JSON.stringify({ score_value: score_val, user_id: user_id, measure_id: 1}),
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'

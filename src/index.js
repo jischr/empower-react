@@ -6,7 +6,6 @@ import Landing from './scenes/Landing'
 import Home from './scenes/Home'
 import Survey from './scenes/Survey'
 import Signup from './scenes/Signup'
-import Graph from './scenes/Graph'
 
 import registerServiceWorker from './registerServiceWorker'
 import './assets/general.css'
