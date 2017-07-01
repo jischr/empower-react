@@ -5,7 +5,7 @@ import
     HelpBlock,
     Button
   } from 'react-bootstrap'
-import WordCloud from 'react-d3-cloud';
+
 import { Cookies } from 'react-cookie'
 import { API_URL } from '../config'
 

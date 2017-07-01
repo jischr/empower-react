@@ -33,7 +33,6 @@ class Charts extends Component {
     fetch(`${API_URL}/v1/users/scores/${user_id}`)
     .then(res => {
       return res.json().then((user) => {
-        console.log(user);
         let label_list = []
         let scores_list = user.scores.map((score) => {
           let date = score.updated_at.substring(0, 10)
@@ -68,7 +67,6 @@ class Charts extends Component {
   render() {
     let date = this.state.dates
     let score = this.state.scores
-    console.log('here', score)
     let chartData = {
         labels: date,
         datasets: [    {

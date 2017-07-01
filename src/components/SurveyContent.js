@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { FormGroup, Radio, Button, Grid, Col, Row } from 'react-bootstrap'
+import { FormGroup, Radio, Button, Col, Row } from 'react-bootstrap'
 import { Cookies } from 'react-cookie'
 import { Redirect } from 'react-router-dom'
 
@@ -72,6 +72,7 @@ class SurveyContent extends Component {
     }
 
   render() {
+    let question_num = this.state.question_id + 1
     return (
       <div>
         <Row>
@@ -79,9 +80,10 @@ class SurveyContent extends Component {
                 <h4><span>Over the past few days,</span> <br /> have you been bothered by any of the following problems?</h4>
                 <hr />
                 <img src={Arrow} alt="arrow logo" className="arrow_logo"/>
-                <h3>{this.surveys['GAD-7'][this.state.question_id]}</h3>
+                <h1 className="text-center">{question_num}</h1>
           </Col>
           <Col xs={12} sm={6} className="answer_side">
+              <h3>{this.surveys['GAD-7'][this.state.question_id]}</h3>
               <FormGroup>
                 <Radio name="qs" inline value="0" onChange={this.handleChange} defaultChecked={false} className="radio_btn first">
                 Not at all
