@@ -109,11 +109,12 @@
 
 .Sidebar hr {
   border-color: rgb(58, 138, 158);
+  margin-bottom: 8px;
 }
 
 .modal-header {
   border-bottom: 1px solid rgb(58, 138, 158);
-  margin-bottom: 18px;
+  margin-bottom: 8px;
 }
 
 .survey-side {
