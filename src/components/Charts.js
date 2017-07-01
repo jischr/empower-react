@@ -67,12 +67,12 @@ class Charts extends Component {
         yAxes: [{
           ticks: {
             display: true,
-            fontColor: 'rgb(232, 232, 232)',
+            fontColor: 'rgb(51, 51, 51)',
             beginAtZero: true,
           },
           scaleLabel: {
             display: true,
-            fontColor: 'rgb(232, 232, 232)',
+            fontColor: 'rgb(51, 51, 51)',
             fontSize: '18',
             labelString: 'GAD-7 Score'
           }
@@ -80,12 +80,12 @@ class Charts extends Component {
         xAxes: [{
           ticks: {
             display: true,
-            fontColor: 'rgb(232, 232, 232)',
+            fontColor: 'rgb(51, 51, 51)',
             beginAtZero: true
           },
           scaleLabel: {
             display: true,
-            fontColor: 'rgb(232, 232, 232)',
+            fontColor: 'rgb(51, 51, 51)',
             fontSize: '18',
             labelString: 'Date of Assessment'
           }
