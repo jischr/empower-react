@@ -20,7 +20,7 @@ class Sidebar extends Component {
 
   componentWillReceiveProps(nextProps) {
     let users = nextProps.users.map((user) => {
-      return (<Link to={`/graph/${user.patient_number}`} className="sidenav_link" key={user.patient_number}>{user.first_name} {user.last_name}</Link>)
+      return (<li><Link to={`/graph/${user.patient_number}`} className="sidenav_link" key={user.patient_number}>{user.first_name} {user.last_name}</Link></li>)
     })
 
     this.setState({users: users})
@@ -39,7 +39,20 @@ class Sidebar extends Component {
           <hr />
           <Link to="/home" className="sidenav_link">Home</Link>
           <hr />
-          {this.state.users}
+          <h3 className="modal_h3">SELECT A PATIENT:</h3>
+          <ul className="patient_list_ul">
+            {this.state.users}
+          </ul>
+          <div className="well well-lg clinician_div">
+            <h3>GAD-7 Assessment</h3>
+            <p className="bold_header">What is the GAD-7?</p>
+            <p>The GAD-7 (General Anxiety Disorder-7) measures severity of anxiety, mainly in outpatients.</p>
+            <p className="bold_header">Guide for Interpreting GAD-7 Scores</p>
+            <p><span>0-4: </span>Normal</p>
+            <p><span>5-9: </span>Mild anxiety.</p>
+            <p><span>10-14: </span>Moderate anxiety.</p>
+            <p><span>15-21: </span>Severe anxiety.</p>
+          </div>
         </Modal.Body>
       </Modal>
     );
