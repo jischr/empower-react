@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { API_URL } from '../config'
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Button } from 'react-bootstrap'
 import '../assets/graphs.css'
 
 import {Line} from 'react-chartjs-2'
@@ -19,8 +19,13 @@ class Charts extends Component {
       education: '',
       sex: '',
       created_at: '',
-      most_recent_score: ','
+      most_recent_score: '',
+      phone_number: '',
+      error: '',
+      success: ''
     }
+
+    this.sendSMS = this.sendSMS.bind(this)
   }
 
   componentWillMount() {
@@ -36,7 +41,26 @@ class Charts extends Component {
           return score.score_value
         })
         let date = user.created_at.substring(0, 10)
-        this.setState({first_name: user.first_name, last_name: user.last_name, scores: scores_list, dates: label_list, education: user.education, birth_date: user.birth_date, created_at: date, sex: user.sex, most_recent_score: scores_list[scores_list.length - 1]})
+        this.setState({first_name: user.first_name, last_name: user.last_name, scores: scores_list, dates: label_list, education: user.education, birth_date: user.birth_date, created_at: date, sex: user.sex, most_recent_score: scores_list[scores_list.length - 1], phone_number: user.phone_number})
+      })
+    })
+  }
+
+  sendSMS() {
+    fetch(`${API_URL}/twilio`, {
+      method: 'POST',
+      body: JSON.stringify({phone_number: this.state.phone_number, user_name: this.state.first_name}),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => {
+      return res.json().then((response) => {
+        if (response.error) {
+          this.setState({error: response.error})
+        } else if (response.success) {
+          this.setState({success: response.success})
+        }
       })
     })
   }
@@ -59,9 +83,7 @@ class Charts extends Component {
 
     let chartOptions = {
       legend: {
-        labels: {
-          fontColor: 'rgb(232, 232, 232)'
-        }
+        display: false
       },
       scales: {
         yAxes: [{
@@ -112,7 +134,7 @@ class Charts extends Component {
         </Row>
         <hr/>
         <Row>
-          <Col sm={7}>
+          <Col sm={7} className="user_content">
             <p><span>Date of Birth:</span> <br />{this.state.birth_date}</p>
             <p><span>Sex:</span> <br />{this.state.sex}</p>
             <p><span>Education:</span> <br />{this.state.education}</p>
@@ -122,6 +144,11 @@ class Charts extends Component {
             <h2 className="most-recent-score">{this.state.most_recent_score}</h2>
           </Col>
         </Row>
+        <div className="sms text-center">
+          <Button onClick={this.sendSMS}>Send SMS Reminder</Button>
+          <p className="error_message">{this.state.error}</p>
+          <p className="success_message">{this.state.success}</p>
+        </div>
       </Col>
       </div>
     )
