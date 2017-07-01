@@ -59,7 +59,7 @@ class SignupForm extends Component {
 
     if (this.state.isUser) {
       userStatus = 'users'
-      userData['phone_number'] = this.state.phone_number
+      userData['phone_number'] = this.state.phone_number.replace(/\D+/g, '')
       userData['patient_number'] =  Math.random().toString(36).substring(7)
       userData['education'] = this.state.education
       userData['sex'] = this.state.sex
