@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Cookies } from 'react-cookie'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import { API_URL } from '../config'
 import '../assets/homeUser.css'
@@ -12,6 +13,9 @@ class Header extends Component {
   constructor () {
     super()
     this.state = {name: ''}
+
+    this.logout = this.logout.bind(this)
+
   }
 
   componentWillMount() {
@@ -27,6 +31,13 @@ class Header extends Component {
     })
   }
 
+  logout() {
+    let cookies = new Cookies()
+    cookies.remove('isLoggedIn')
+    cookies.remove('id')
+    cookies.remove('isUser')
+  }
+
   render() {
     return (
       <div>
@@ -37,6 +48,7 @@ class Header extends Component {
           </Col>
           <Col sm={3}>
             <p className="welcome_name"><img className="text-center welcome-user" src={ Man } alt="man logo"/> {this.state.name}</p>
+            <p><Link to="/" onClick={this.logout} className="welcome_name">Logout</Link></p>
           </Col>
         </Row>
         </div>
