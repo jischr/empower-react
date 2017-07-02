@@ -110,16 +110,26 @@
 
 .Sidebar hr {
   border-color: rgb(58, 138, 158);
-  margin-bottom: 8px;
 }
 
 .modal-header {
   border-bottom: 1px solid rgb(58, 138, 158);
-  margin-bottom: 8px;
+  margin-bottom: 18px;
+  padding-bottom: 0px;
 }
 
 .survey-side {
+  box-shadow: none;
   margin-bottom: 0px;
+  border: none;
+  background-color: rgb(58, 138, 158);;
+  margin-top: -20px;
+  border-radius: 0px;
+}
+
+.survey-side h3 {
+  color: white;
+  font-weight: 700;
 }
 
 .crisis_div, .clinician_div {
