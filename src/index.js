@@ -6,7 +6,7 @@ import Landing from './scenes/Landing'
 import Home from './scenes/Home'
 import Survey from './scenes/Survey'
 import Signup from './scenes/Signup'
-import Mindful from './scenes/Mindful'
+import Mindfulness from './scenes/Mindfulness'
 import Journal from './scenes/Journal'
 
 import registerServiceWorker from './registerServiceWorker'
@@ -20,7 +20,7 @@ ReactDOM.render(
       <Route exact path="/survey" component={Survey}></Route>
       <Route exact path="/signup" component={Signup}></Route>
       <Route path="/graph" component={Home}></Route>
-      <Route exact path="/mindful" component={Mindful}></Route>
+      <Route exact path="/mindfulness" component={Mindfulness}></Route>
       <Route exact path="/journal" component={Journal}></Route>
     </div>
   </BrowserRouter>,

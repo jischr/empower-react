@@ -1,0 +1,42 @@
+.mindful {
+  height: 700px;
+}
+
+.mindful-about {
+  background-color: rgb(51, 167, 190);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-meditation {
+  font-weight: 200;
+  margin-top: 0;
+  font-size: 3em;
+  padding: 0 50px 20px 50px;
+  border-bottom: solid 1px black;
+}
+
+.header-mindfulness {
+  font-family: 'Sacramento', sans-serif;
+  margin-bottom: 10px;
+  font-size: 7em;
+}
+
+.mindful-about-more {
+  margin-top: 20px;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 2em;
+  font-size: 1.5em;
+}
+
+.mindful-soundcloud {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(249, 249, 249)
+}
