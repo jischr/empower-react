@@ -24,8 +24,8 @@ class HomeUser extends Component {
                 <hr></hr>
               </div>
               <div>
-                <h2>What is an ALTERNATIVE?</h2>
-                <p><span className="alt-content-heading">An alternative is a choice to follow a different thought or behavior pattern when we feel our minds going to that anxious place.</span><br/><br/>Our brains form neural pathways -- the more we exhibit a behavior or thought, the deeper and more traveled the path becomes. But, it doesn't always have to be this way. The brain's neuro-plasticity enables us to "rewire" these unhealthy neural pathways for healthier choice.<br/><br/>Need some inspiration? Take a walk. Drink a cup of tea. Talk to a friend.</p>
+                <h2 className="alt-heading">What is an ALTERNATIVE?</h2>
+                <p><span className="alt-content-heading">An alternative is a choice to follow a different thought or behavior pattern when we feel our minds going to that anxious place.</span><br /><br />Need some inspiration? Take a walk. Drink a cup of tea. Talk to a friend.</p>
                 <div className="take-survey-container">
                   <div className="text-center take-survey">
                     <h2><span className="check-in-light">CHECK-IN</span><span className="check-in-heading"> with yourself</span></h2>

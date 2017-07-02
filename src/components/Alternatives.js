@@ -22,6 +22,7 @@ class Alternatives extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.deleteAlternative = this.deleteAlternative.bind(this)
   }
 
   componentWillMount() {
@@ -33,7 +34,7 @@ class Alternatives extends Component {
       return res.json().then((user) => {
         if (user.alternatives) {
           let alt_ideas = user.alternatives.map((alt) => {
-            return (<p key={alt.id} className="alt-list-text text-center">{alt.text}</p>)
+            return (<p key={alt.id} id={alt.id} onClick={this.deleteAlternative} className="alt-list-text text-center">{alt.text}</p>)
           })
           this.setState({alt_ideas: alt_ideas, name: user.first_name})
         }
@@ -59,12 +60,29 @@ class Alternatives extends Component {
     }).then(res => {
       return res.json().then((res) => {
         let alts = this.state.alt_ideas
-        let newAlt = (<p key={res.id} className="alt-list-text text-center">{res.text}</p>)
+        let newAlt = (<p key={res.id} id={res.id} onClick={this.deleteAlternative} className="alt-list-text text-center">{res.text}</p>)
         alts.push(newAlt)
         this.setState({alt_ideas: alts})
       })
     })
     this.setState({text: ''})
+  }
+
+  deleteAlternative(e) {
+    fetch(`${API_URL}/v1/alternatives/${e.target.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => {
+      return res.text()
+    }).then((res) => {
+      let alt_ideas = this.state.alt_ideas
+      let id = alt_ideas.indexOf(e.target)
+      alt_ideas.splice(id, 1)
+      this.setState(alt_ideas: alt_ideas)
+    })
   }
 
   render() {
@@ -90,7 +108,6 @@ class Alternatives extends Component {
         </div>
     )
   }
-
 }
 
 function FieldGroup({ id, label, help, ...props }) {

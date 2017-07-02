@@ -3,10 +3,11 @@
 }
 
 .welcome {
-  margin-left: -5em;
   background-color: rgb(237, 237, 237);
   border-bottom: 0px;
   margin: 0px;
+  padding-bottom: 0px;
+  height: auto;
 }
 
 .welcome-sun {
@@ -29,7 +30,7 @@
 }
 
 .home_row {
-  margin-top: -1.25em; 
+  /*margin-top: -1.25em;*/
 }
 .home-user-grid {
   height: auto;
@@ -55,13 +56,15 @@
 }
 .home-right {
   background-image: url('./images/alternatives2.jpg');
-  height: auto;
+  height: 746px;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .alternatives button, .alternatives button:hover, .alternatives button:active, .alternatives .btn-default:hover, .alternatives .btn-default:active  {
@@ -83,18 +86,21 @@
 
 .home-left {
   background-color: #33A7BE;
-  height:auto;
+  height:746px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: rgb(23, 54, 71);
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .home-left h1 {
   font-weight: 700;
   font-size:4em;
   margin-bottom: 0px;
+  padding-top: 1em;
 }
 
 .home-left h3 {
@@ -105,12 +111,13 @@
   margin-right: 2em;
 }
 
-.home-left h2 {
+.alt-heading {
  margin-left: 2em;
+ padding-bottom: 1em;
 }
 
 .home-left p {
-  margin-left: 7em;
+  margin-left: 3.5em;
   margin-right: 1.5em;
   font-size: 1.2em;
 }
@@ -136,7 +143,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin-bottom: 2em;
 }
 .take-survey button, .take-survey button:hover, .take-survey button:active, .take-survey .btn-default:hover, .take-survey .btn-default:active  {
   align-item: left;
