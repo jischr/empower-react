@@ -6,8 +6,9 @@
   background-color: rgb(237, 237, 237);
   border-bottom: 0px;
   margin: 0px;
-  padding-bottom: 0px;
   height: auto;
+  border: 1px solid darkgrey;
+  padding: 3px 0 3px 0;
 }
 
 .welcome-sun {
@@ -55,7 +56,7 @@
   display: inline-block;
 }
 .home-right {
-  background-image: url('./images/alternatives2.jpg');
+  background-image: url('./images/splash.jpg');
   height: 746px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,7 +86,7 @@
 }
 
 .home-left {
-  background-color: #33A7BE;
+  background-color: #fcf1a7;
   height:746px;
   display: flex;
   flex-direction: column;
