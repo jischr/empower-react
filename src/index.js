@@ -19,7 +19,7 @@ ReactDOM.render(
       <Route exact path="/survey" component={Survey}></Route>
       <Route exact path="/signup" component={Signup}></Route>
       <Route path="/graph" component={Home}></Route>
-      <Route path="/mindful" component={Mindful}></Route>
+      <Route exact path="/mindful" component={Mindful}></Route>
     </div>
   </BrowserRouter>,
   document.getElementById('root')

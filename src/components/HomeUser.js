@@ -7,6 +7,8 @@ import { Row,
 import SideNavUser from './SideNavUser'
 import Alternatives from './Alternatives'
 import Header from './Header'
+import Mindful from '../scenes/Mindful'
+
 import '../assets/homeUser.css'
 
 class HomeUser extends Component {
