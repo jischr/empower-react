@@ -1,6 +1,5 @@
 .question_side {
   height: 700px;
-  margin-top: -1.5em;
   background-color: rgb(58, 138, 158);
   color: rgb(232, 232, 232);
   font-weight: 200;
@@ -47,7 +46,6 @@
 
 .answer_side {
   height: 700px;
-  margin-top: -1.5em;
   background-color: rgb(23, 54, 71);
   color: rgb(232, 232, 232);
   display: flex;
