@@ -23,15 +23,16 @@ class Journal extends Component {
     let cookie = new Cookies()
     let user_id = cookie.get('id')
 
-    fetch(`${API_URL}/v1/users/journals/${user_id}`)
+    fetch(`${API_URL}/v1/journals/user/${user_id}`)
     .then(res => {
-      return res.json().then((user) => {
-        if (user.journals) {
-          let journals = user.journals.map((entry) => {
+      return res.json().then((journals) => {
+        console.log(journals);
+        if (journals) {
+          let journalsList = journals.map((entry) => {
             let date = entry.created_at.substring(5, 10) + '-' + entry.created_at.substring(0, 4)
             return (<div key={entry.id} className="entry_div"><h2>{entry.title}</h2><h4 className="text-right">{date}</h4><p>{entry.content}</p><p className="sentiment-p">Sentiment: <i className={entry.sentiment}></i></p></div>)
           })
-          this.setState({journals: journals, user_id: user_id})
+          this.setState({journals: journalsList, user_id: user_id})
         }
       })
     })
@@ -98,7 +99,7 @@ class Journal extends Component {
             let journals = this.state.journals
             let date = res.created_at.substring(5, 10) + '-' + res.created_at.substring(0, 4)
             journals.unshift(<div key={res.id} className="entry_div"><h2>{res.title}</h2><h4 className="text-right">{date}</h4><p> {res.content}</p><p className="sentiment-p">Sentiment: <i className={res.sentiment}></i></p></div>)
-            this.setState(journals: journals)
+            this.setState({journals: journals, title: '', content: ''})
           })
         })
       })
@@ -119,12 +120,16 @@ class Journal extends Component {
           type="text"
           placeholder="Title"
           onChange = {this.handleTitleChange}
+          required={true}
+          value={this.state.title ? this.state.title : ''}
         />
         <FormGroup controlId="formControlsTextarea">
           <FormControl
            componentClass="textarea"
            placeholder="Write your thoughts..."
            onChange = {this.handleContentChange}
+           required={true}
+           value={this.state.content ? this.state.content : ''}
           />
         </FormGroup>
         <div className="text-center">

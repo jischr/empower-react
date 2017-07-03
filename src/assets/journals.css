@@ -78,18 +78,17 @@
   height: 400px;
   width: 85%;
   background-color: rgba(249, 249, 249, .7);
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   overflow: scroll;
 }
 
 .entry_div {
-  margin-top: 1.5em;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+  padding: 1.5em;
 }
+
 .sentiment-p {
   border-top: 1px solid rgb(23, 54, 71);
   font-size: 1.35em;
