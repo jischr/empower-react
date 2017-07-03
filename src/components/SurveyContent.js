@@ -23,7 +23,7 @@ class SurveyContent extends Component {
     this.surveys = {
       'GAD-7': [
         'Feeling nervous, anxious or on edge',
-        'Not being able to stop or control worrying',
+        'Unable to stop or control your worrying',
         'Worrying too much about different things',
         'Trouble relaxing',
         'Being so restless that it is hard to sit still',
