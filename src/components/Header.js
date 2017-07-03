@@ -1,17 +1,21 @@
 import React, {Component} from 'react'
 import { Cookies } from 'react-cookie'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import { API_URL } from '../config'
 import '../assets/homeUser.css'
 import Sun from '../assets/images/sun.svg'
 import Man from '../assets/images/user.svg'
-
+import Circle from '../assets/images/x-circle.svg'
 
 class Header extends Component {
   constructor () {
     super()
     this.state = {name: ''}
+
+    this.logout = this.logout.bind(this)
+
   }
 
   componentWillMount() {
@@ -27,16 +31,23 @@ class Header extends Component {
     })
   }
 
+  logout() {
+    let cookies = new Cookies()
+    cookies.remove('isLoggedIn')
+    cookies.remove('id')
+    cookies.remove('isUser')
+  }
+
   render() {
     return (
       <div>
         <div className="well well-large welcome text-center">
         <Row>
-          <Col sm={8}>
+          <Col sm={7}>
             <h2>Emp <img className="text-center welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
           </Col>
-          <Col sm={3}>
-            <p className="welcome_name"><img className="text-center welcome-user" src={ Man } alt="man logo"/> {this.state.name}</p>
+          <Col sm={4}>
+            <p className="welcome_name"><img className="text-center welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/" onClick={this.logout}><img className="text-center welcome-user" src={ Circle } alt="logout logo"/>&nbsp;Logout</Link></p>
           </Col>
         </Row>
         </div>

@@ -25,6 +25,11 @@
   height: 1.25em;
 }
 
+.welcome_name a {
+  color: rgb(57, 57, 57);
+  
+}
+
 .welcome h2 {
   text-align: left;
   margin-top: 10px;

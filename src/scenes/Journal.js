@@ -7,6 +7,7 @@ import $ from 'jquery'
 
 import SideNavUser from '../components/SideNavUser'
 import Header from '../components/Header'
+import '../assets/journals.css'
 
 class Journal extends Component {
   constructor() {
@@ -27,7 +28,7 @@ class Journal extends Component {
       return res.json().then((user) => {
         if (user.journals) {
           let journals = user.journals.map((entry) => {
-            return (<div key={entry.id}><h1>{entry.title} {res.created_at}</h1><p>{entry.content}</p><p>Sentiment: <i className={entry.sentiment}></i></p></div>)
+            return (<div key={entry.id} className="entry_div"><h2>{entry.title} {res.created_at}</h2><h4>{res.created_at}</h4><p>{entry.content}</p><p>Sentiment: <i className={entry.sentiment}></i></p></div>)
           })
           this.setState({journals: journals, user_id: user_id})
         }
@@ -94,7 +95,7 @@ class Journal extends Component {
         }).then((res) => {
           return res.json().then((res) => {
             let journals = this.state.journals
-            journals.push(<div key={res.id}><h1>{res.title} {res.created_at}</h1><p> {res.content}</p><p>Sentiment: <i className={res.sentiment}></i></p></div>)
+            journals.push(<div key={res.id} className="entry_div"><h2>{res.title}</h2><h4>{res.created_at}</h4><p> {res.content}</p><p>Sentiment: <i className={res.sentiment}></i></p></div>)
             this.setState(journals: journals)
           })
         })
@@ -107,8 +108,9 @@ class Journal extends Component {
       <div>
       <SideNavUser />
       <Header />
-      <Row>
-      <Col sm={6}>
+      <Row className="row_height">
+      <Col sm={6} className="form_side">
+      <h3>today's entry</h3>
       <form onSubmit={this.handleSave}>
         <FieldGroup
           id="formControlsEmail"
@@ -123,14 +125,18 @@ class Journal extends Component {
            onChange = {this.handleContentChange}
           />
         </FormGroup>
-        <Button type="submit">
+        <div className="text-center">
+        <Button type="submit" >
           Save
         </Button>
+        </div>
       </form>
       </Col>
 
-      <Col sm={6}>
-        <div>{this.state.journals}</div>
+      <Col sm={6} className="entries_side">
+        <h1>Your Journal</h1>
+        <p className="text-center description">Just the act of recording your thoughts reduces anxiety.<br/><span>why not give it a try?</span></p>
+        <div className="outer_journal_div">{this.state.journals}</div>
       </Col>
       </Row>
       </div>

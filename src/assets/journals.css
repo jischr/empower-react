@@ -1,0 +1,88 @@
+.row_height {
+  height: 700px;
+}
+
+.form_side {
+  height: 100%;
+  background-color: rgb(58, 138, 158);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_side form {
+  width: 80%;
+}
+
+.form_side textarea {
+  height: 300px
+}
+
+.form_side h3 {
+  font-family: 'Sacramento', sans-serif;
+  font-size: 4.5em;
+  padding-bottom: .5em;
+  color: rgb(23, 54, 71);
+}
+
+.form_side button, .form_side button:hover, .form_side button:active, .form_side .btn-default:hover, .form_side .btn-default:active  {
+  align-item: left;
+  border-radius: 1px;
+  border: none;
+  background-color: rgb(23, 54, 71);
+  color: rgb(232, 232, 232);
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+
+.entries_side {
+  height: 100%;
+  background-color: rgb(23, 54, 71);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.entries_side h1 {
+  color: rgb(58, 138, 158);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid rgb(58, 138, 158);
+  font-size: 3.25em;
+  padding: 1em 2em 0.25em 2em
+}
+
+.entries_side .description {
+  width: 70%;
+  color: rgb(58, 138, 158);
+  font-size: 1.25em;
+}
+
+.description span {
+  font-family: 'Sacramento', sans-serif;
+  font-size: 2.25em;
+}
+
+.entry_div {
+  width: 90%;
+  height: auto;
+  background-color: rgba(249, 249, 249, .7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 2em;
+}
+
+
+.outer_journal_div {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
