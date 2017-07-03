@@ -47,7 +47,7 @@ class HomeClinician extends Component {
         <SideNavC usersToChild={usersToChild} />
         <Header />
         <Row className="home_clinician">
-        { window.location.href.split('/')[3] === 'home' &&
+        { window.location.pathname === '/home' &&
           <div>
             <Col sm={6} className="add_user">
               <AddUser c_id={c_id}/>
@@ -64,7 +64,7 @@ class HomeClinician extends Component {
             </Col>
           </div>
           }
-          { window.location.href.split('/')[3] === 'graph' &&
+          { window.location.pathname === '/graph' &&
             <Charts />
           }
         </Row>
