@@ -8,7 +8,6 @@ import { Cookies } from 'react-cookie'
 import SideNavUser from './SideNavUser'
 import Alternatives from './Alternatives'
 import Header from './Header'
-import { Route } from 'react-router-dom'
 
 import '../assets/homeUser.css'
 
@@ -20,7 +19,7 @@ class HomeUser extends Component {
   }
 
   componentWillMount() {
-    let cookie = new Cookies
+    let cookie = new Cookies()
     this.setState({ name: cookie.get('name') })
   }
 
@@ -47,7 +46,7 @@ class HomeUser extends Component {
             <Col md={6} className="home-right text-center">
               <h1>ALTERNATIVES</h1>
               <h2>/ noun  al·ter·na·tives/</h2>
-              <p><span className="alt-content-heading">A choice to follow a different thought or behavior pattern when we feel our minds going to that anxious place.</span><br /><br />Need inspiration? Drink a cup of tea. Talk to a friend.</p>
+              <p className="alt-content"><span className="alt-content-heading">A choice to follow a different thought or behavior pattern when we feel our minds going to that anxious place.</span><br /><br />Need inspiration? Drink a cup of tea. Talk to a friend.</p>
               <Alternatives />
             </Col>
           </Row>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Modal, Button } from 'react-bootstrap'
-import { Cookies } from 'react-cookie'
 
 import '../assets/sidenav.css'
 import Phone from '../assets/images/phone.svg'

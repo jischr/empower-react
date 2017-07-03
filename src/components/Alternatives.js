@@ -112,9 +112,11 @@ class Alternatives extends Component {
             </FormGroup>
             <Button type="submit"><img src={Plus} alt="add-new-alternative"/></Button>
           </form>
-            <div className="alternative-list">
+          <div className="alternative-list">
+            <div className="text-center">
               {this.state.alt_ideas}
             </div>
+        </div>
         </div>
     )
   }

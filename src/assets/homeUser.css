@@ -40,18 +40,21 @@
 }
 
 .alternatives {
-  /*background-color: rgba(255, 255, 255, .6);*/
   width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /*padding-bottom: 15px;*/
-  /*margin: 5em 0em 14em 0em*/
+}
+
+.alternative-list {
+  background-color: rgba(255, 255, 255, .6);
+  width: 75%;
+  padding: 2em;
 }
 
 .alternatives input {
-  margin-top: 25px;
+  margin-top: .5em;
 }
 
 .alt-form {
@@ -89,9 +92,6 @@
   font-size: 5em;
 }
 
-.home-right p {
-  width: 60%;
-}
 .home-left {
   background-color: #75adbb;
   height:700px;
@@ -127,18 +127,25 @@
   font-weight: 800;
 }
 
+.alt-content {
+  width: 60%;
+}
 .check-in-heading {
   font-size: .65em;
   font-weight: 200;
 }
+
 .check-in-light {
   font-weight: 200;
 }
+
 .alt-list-text {
   list-style: none;
   font-size: 1.5em;
   padding: 0px;
+  margin: 0px;
 }
+
 .take-survey-container {
   display: flex;
   flex-direction: column;
@@ -167,9 +174,10 @@
   height: 100%;
 }
 
-.cloud svg{
-  height: 50%;
-  width: 50%;
+.cloud svg {
+  margin-top: -2em;
+  height: auto;
+  width: 35%;
 }
 
 .cloud path {
