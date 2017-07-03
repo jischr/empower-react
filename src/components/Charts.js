@@ -35,12 +35,23 @@ class Charts extends Component {
       return res.json().then((user) => {
         let label_list = []
         let scores_list = user.scores.map((score) => {
-          let date = score.updated_at.substring(0, 10)
+          let date = user.updated_at.substring(5, 10) + '-' + user.updated_at.substring(0, 4)
           label_list.push(date)
           return score.score_value
         })
-        let date = user.created_at.substring(0, 10)
-        this.setState({first_name: user.first_name, last_name: user.last_name, scores: scores_list, dates: label_list, education: user.education, birth_date: user.birth_date, created_at: date, sex: user.sex, most_recent_score: scores_list[scores_list.length - 1], phone_number: user.phone_number})
+        let date = user.created_at.substring(5, 10) + '-' + user.created_at.substring(0, 4)
+        this.setState({
+          first_name: user.first_name,
+          last_name: user.last_name,
+          scores: scores_list,
+          dates: label_list,
+          education: user.education,
+          birth_date: user.birth_date,
+          created_at: date,
+          sex: user.sex,
+          most_recent_score: scores_list[scores_list.length - 1],
+          phone_number: user.phone_number
+        })
       })
     })
   }

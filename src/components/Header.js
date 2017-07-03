@@ -36,13 +36,14 @@ class Header extends Component {
     cookies.remove('isLoggedIn')
     cookies.remove('id')
     cookies.remove('isUser')
+    cookies.remove('name')
   }
 
   render() {
     return (
       <div>
         <div className="well well-large welcome text-center">
-        <Row>
+        <Row className="welcome-row">
           <Col sm={7}>
             <h2>Emp <img className="text-center welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
           </Col>

@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { Row,
          Col } from 'react-bootstrap'
+import { Cookies } from 'react-cookie'
 
 import SideNavUser from './SideNavUser'
 import Alternatives from './Alternatives'
@@ -11,6 +12,17 @@ import Header from './Header'
 import '../assets/homeUser.css'
 
 class HomeUser extends Component {
+  contructor() {
+    this.state = {
+      name: ''
+    }
+  }
+
+  componentWillMount() {
+    let cookie = new Cookies()
+    this.setState({ name: cookie.get('name') })
+  }
+
   render() {
     return (
       <div>
@@ -20,22 +32,21 @@ class HomeUser extends Component {
           <Row className="home_row home-user-grid">
             <Col md={6} className="home-left">
               <div className="text-center">
-                <h1>Empower</h1>
-                <h3>putting you back in charge</h3>
+                <h1>WELCOME</h1>
+                <h3>{this.state.name}</h3>
                 <hr></hr>
               </div>
-              <div>
-                <h2 className="alt-heading">What is an ALTERNATIVE?</h2>
-                <p><span className="alt-content-heading">An alternative is a choice to follow a different thought or behavior pattern when we feel our minds going to that anxious place.</span><br /><br />Need some inspiration? Take a walk. Drink a cup of tea. Talk to a friend.</p>
-                <div className="take-survey-container">
-                  <div className="text-center take-survey">
-                    <h2><span className="check-in-light">CHECK-IN</span><span className="check-in-heading"> with yourself</span></h2>
-                    <Link to="/survey"><Button>Take a Survey</Button></Link>
-                  </div>
+              <div className="take-survey-container">
+                <div className="text-center take-survey">
+                  <h2><span className="check-in-light">CHECK-IN</span><span className="check-in-heading"> with yourself</span></h2>
+                  <Link to="/survey"><Button>Take a Survey</Button></Link>
                 </div>
               </div>
             </Col>
-            <Col md={6} className="home-right">
+            <Col md={6} className="home-right text-center">
+              <h1>ALTERNATIVES</h1>
+              <h2>/ noun  al·ter·na·tives/</h2>
+              <p className="alt-content"><span className="alt-content-heading">A choice to follow a different thought or behavior pattern when we feel our minds going to that anxious place.</span><br /><br />Need inspiration? Drink a cup of tea. Talk to a friend.</p>
               <Alternatives />
             </Col>
           </Row>

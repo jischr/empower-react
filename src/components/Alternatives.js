@@ -88,23 +88,35 @@ class Alternatives extends Component {
   render() {
     return (
         <div className="alternatives text-center">
-            <h1>ALTERNATIVES</h1>
-            <div>
+          <div className="cloud">
+            <svg viewBox='0 0 105 105'>
+              <path d='M 25,60
+               a 20,20 1 0,0 0,40
+               h 50
+               a 20,20 1 0,0 0,-40
+               a 10,10 1 0,0 -15,-10
+               a 15,15 1 0,0 -35,10
+               z' />
+             </svg>
+          </div>
+          <form onSubmit={this.handleClick}>
+            <FormGroup className="alt-form">
+              <FieldGroup
+                id="formControlsAlt"
+                type="text"
+                placeholder="Enter an Alternative"
+                onChange = {this.handleChange}
+                required={true}
+                value ={this.state.text}
+              />
+            </FormGroup>
+            <Button type="submit"><img src={Plus} alt="add-new-alternative"/></Button>
+          </form>
+          <div className="alternative-list">
+            <div className="text-center">
               {this.state.alt_ideas}
             </div>
-            <form onSubmit={this.handleClick}>
-              <FormGroup className="alt-form">
-                <FieldGroup
-                  id="formControlsAlt"
-                  type="text"
-                  placeholder="Enter an Alternative"
-                  onChange = {this.handleChange}
-                  required={true}
-                  value ={this.state.text}
-                />
-              </FormGroup>
-              <Button type="submit"><img src={Plus} alt="add-new-alternative"/></Button>
-            </form>
+        </div>
         </div>
     )
   }

@@ -8,6 +8,7 @@
   margin: 0px;
   height: auto;
   border: 1px solid darkgrey;
+  border-radius: 0%;
   padding: 3px 0 3px 0;
 }
 
@@ -27,7 +28,7 @@
 
 .welcome_name a {
   color: rgb(57, 57, 57);
-  
+
 }
 
 .welcome h2 {
@@ -35,50 +36,55 @@
   margin-top: 10px;
 }
 
-.home_row {
-  /*margin-top: -1.25em;*/
-}
 .home-user-grid {
   height: auto;
 }
 
+.welcome-row {
+  margin-right: 0px;
+}
+
 .alternatives {
-  background-color: rgba(255, 255, 255, .6);
   width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 15px;
-  margin: 14em 0em 14em 0em
+}
+
+.alternative-list {
+  background-color: rgba(255, 255, 255, .6);
+  width: 75%;
+  padding: 2em;
 }
 
 .alternatives input {
-  margin-top: 25px;
+  margin-top: .5em;
 }
 
 .alt-form {
   display: inline-block;
 }
+
 .home-right {
-  background-image: url('./images/splash.jpg');
-  height: 746px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgb(51, 167, 190);
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-right: 0px;
   padding-left: 0px;
+  color: rgb(23, 54, 71);
+
 }
 
 .alternatives button, .alternatives button:hover, .alternatives button:active, .alternatives .btn-default:hover, .alternatives .btn-default:active  {
   margin-left: 10px;
   border-radius: 1px;
   border: none;
-  background-color: rgb(58, 138, 158);
-  color: rgb(232, 232, 232);
+  background-color: rgb(249, 249, 249);
+  color: rgb(58, 138, 158);
   font-size: .5em;
   height: 30px;
   width: 30px;
@@ -86,24 +92,29 @@
 }
 
 .home-right h1 {
-  font-weight: 700;
-  color: #33A7BE;
+  font-weight: 200;
+  color: rgb(23, 54, 71);
+  font-size: 5em;
 }
 
 .home-left {
-  background-color: #fcf1a7;
-  height:746px;
+  /*background-color: #75adbb;*/
+  background-color: #97d7e3;
+  height:700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /*color: rgb(23, 54, 71);*/
   color: rgb(23, 54, 71);
+  /*color: #28606e;*/
+
   padding-right: 0px;
   padding-left: 0px;
 }
 
 .home-left h1 {
-  font-weight: 700;
+  font-weight: 800;
   font-size:4em;
   margin-bottom: 0px;
   padding-top: 1em;
@@ -112,38 +123,39 @@
 .home-left h3 {
   font-family: 'Sacramento', sans-serif;
   margin-top: 7px;
-  font-size: 2.5em;
+  font-size: 6em;
   margin-left: 2em;
   margin-right: 2em;
 }
 
 .alt-heading {
- margin-left: 2em;
  padding-bottom: 1em;
-}
-
-.home-left p {
-  margin-left: 3.5em;
-  margin-right: 1.5em;
-  font-size: 1.2em;
 }
 
 .alt-content-heading {
   font-weight: 800;
 }
 
+.alt-content {
+  width: 60%;
+}
+
 .check-in-heading {
   font-size: .65em;
   font-weight: 200;
 }
+
 .check-in-light {
   font-weight: 200;
 }
+
 .alt-list-text {
   list-style: none;
   font-size: 1.5em;
   padding: 0px;
+  margin: 0px;
 }
+
 .take-survey-container {
   display: flex;
   flex-direction: column;
@@ -155,7 +167,7 @@
   align-item: left;
   border-radius: 1px;
   border: none;
-  background-color: rgb(23, 54, 71);
+  background-color: #33a7be;
   color: rgb(232, 232, 232);
   font-size: 1.25em;
   text-transform: uppercase;
@@ -170,8 +182,18 @@
   padding: 2em 2em 1em 2em;
   background-color: rgba(255, 255, 255, .1);
   height: 100%;
-  width: 55%;
 }
+
+.cloud svg {
+  margin-top: -2em;
+  height: auto;
+  width: 35%;
+}
+
+.cloud path {
+  fill: rgb(249, 249, 249);
+}
+
 .footer {
   background-color: rgb(23, 54, 71);
   color: rgb(235, 238, 238);

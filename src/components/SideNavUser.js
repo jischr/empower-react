@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Modal, Button } from 'react-bootstrap'
-import { Cookies } from 'react-cookie'
 
 import '../assets/sidenav.css'
 import Phone from '../assets/images/phone.svg'
@@ -22,7 +21,7 @@ class Sidebar extends Component {
           <hr />
           <Link to="/journal" className="sidenav_link">Journaling</Link>
           <hr />
-          <Link to="/mindful" className="sidenav_link">Mindfulness Meditation</Link>
+          <Link to="/mindfulness" className="sidenav_link">Mindfulness Meditation</Link>
           <hr />
           <div className="well well-lg survey-side">
             <h3>WHY SURVEYS?</h3>

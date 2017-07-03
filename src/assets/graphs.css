@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -1.25em;
 }
 
 
@@ -18,7 +17,6 @@
 .user_info_side {
   background-color: #82b2bf;
   height: 700px;
-  margin-top: -1.25em;
 }
 
 .user_info_side hr {

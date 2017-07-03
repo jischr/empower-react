@@ -63,6 +63,7 @@ class LoginForm extends Component {
         if (loginRes.user_id) {
           cookies.set('id', loginRes.user_id, {path:'/', expires: expiration})
           cookies.set('isUser', 1, {path:'/', expires: expiration})
+          cookies.set('name', loginRes.name, {path:'/', expires: expiration})
         }
         if (loginRes.clinician_id) {
           cookies.set('id', loginRes.clinician_id, {path:'/', expires: expiration})
@@ -70,7 +71,7 @@ class LoginForm extends Component {
         }
         // keep track of login status
         cookies.set('isLoggedIn', 1, {path:'/', expires: expiration})
-        this.setState({ redirect: true})
+        this.setState({ redirect: true })
       }
     })
   }
