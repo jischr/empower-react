@@ -9,6 +9,7 @@ import SideNavC from '../components/SideNavC.js'
 
 class Home extends Component {
   render() {
+    console.log("HERE!");
     let cookies = new Cookies()
     if (!cookies.get('isLoggedIn') && +cookies.get('isUser')) {
       return <Redirect to={"/"}/>

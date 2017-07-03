@@ -32,7 +32,6 @@ class Header extends Component {
       return res.json().then((user) => {
         let full_name = `${user.first_name} ${user.last_name}`
         this.setState({name: full_name, patient_number: user.patient_number, isUser: isUser })
-        console.log(this.state.isUser)
       })
     })
   }

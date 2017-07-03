@@ -41,7 +41,6 @@ class HomeClinician extends Component {
   render() {
     let usersToChild = this.state.usersToChild
     let c_id = this.state.c_id
-
     return (
       <div>
         <SideNavC usersToChild={usersToChild} />
@@ -64,7 +63,7 @@ class HomeClinician extends Component {
             </Col>
           </div>
           }
-          { window.location.pathname === '/graph' &&
+          { window.location.pathname.split('/')[1] === 'graph' &&
             <Charts />
           }
         </Row>

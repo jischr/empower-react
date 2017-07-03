@@ -4,7 +4,6 @@ import { Col, Row, Button } from 'react-bootstrap'
 import '../assets/graphs.css'
 
 import {Line} from 'react-chartjs-2'
-// var LineChart = require('react-chartjs').Line
 
 class Charts extends Component {
   constructor() {
@@ -29,6 +28,7 @@ class Charts extends Component {
   }
 
   componentWillMount() {
+    console.log('HERE!!!!!')
     let user_id = window.location.href.split('/')[4]
     fetch(`${API_URL}/v1/users/scores/${user_id}`)
     .then(res => {

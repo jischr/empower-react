@@ -56,3 +56,9 @@
 .grid-form-right {
   padding: 0px 0px 0px 5px;
 }
+
+.about {
+  background-color: rgb(43, 144, 142);
+  width: 100vw;
+  height: 100vh;
+}

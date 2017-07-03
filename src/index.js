@@ -14,13 +14,13 @@ import './assets/general.css'
 ReactDOM.render(
   <BrowserRouter>
     <div className="App">
-      <Route exact path="/" component={Landing}></Route>
-      <Route exact path="/home" component={Home}></Route>
-      <Route exact path="/survey" component={Survey}></Route>
-      <Route exact path="/signup" component={Landing}></Route>
-      <Route path="/graph" component={Home}></Route>
-      <Route exact path="/mindfulness" component={Mindfulness}></Route>
-      <Route exact path="/journal" component={Journal}></Route>
+      <Route exact path="/" component={ Landing }></Route>
+      <Route exact path="/home" component={ Home }></Route>
+      <Route exact path="/survey" component={ Survey }></Route>
+      <Route exact path="/signup" component={ Landing }></Route>
+      <Route path="/graph" component={ Home }></Route>
+      <Route exact path="/mindfulness" component={ Mindfulness }></Route>
+      <Route exact path="/journal" component={ Journal }></Route>
     </div>
   </BrowserRouter>,
   document.getElementById('root')
