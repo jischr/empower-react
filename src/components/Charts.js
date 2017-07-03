@@ -100,6 +100,7 @@ class Charts extends Component {
             display: true,
             fontColor: 'rgb(51, 51, 51)',
             beginAtZero: true,
+            max: 21
           },
           scaleLabel: {
             display: true,
@@ -112,7 +113,7 @@ class Charts extends Component {
           ticks: {
             display: true,
             fontColor: 'rgb(51, 51, 51)',
-            beginAtZero: true
+            beginAtZero: true,
           },
           scaleLabel: {
             display: true,

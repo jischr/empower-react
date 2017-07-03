@@ -8,25 +8,31 @@ import '../assets/homeUser.css'
 import Sun from '../assets/images/sun.svg'
 import Man from '../assets/images/user.svg'
 import Circle from '../assets/images/x-circle.svg'
+import Clipboard from '../assets/images/clipboard.svg'
 
 class Header extends Component {
   constructor () {
     super()
-    this.state = {name: ''}
+    this.state = { name: '',
+      patient_number: '',
+      isUser: ''
+    }
 
     this.logout = this.logout.bind(this)
-
   }
 
   componentWillMount() {
     let cookies = new Cookies()
     let id = cookies.get('id')
-    let userStatus = +cookies.get('isUser') ? 'users' : 'clinicians'
+    let isUser = +cookies.get('isUser') ? true : false
+
+    let userStatus = isUser ? 'users' : 'clinicians'
     fetch(`${API_URL}/v1/${userStatus}/${id}`)
     .then(res => {
       return res.json().then((user) => {
         let full_name = `${user.first_name} ${user.last_name}`
-        this.setState({name: full_name})
+        this.setState({name: full_name, patient_number: user.patient_number, isUser: isUser })
+        console.log(this.state.isUser)
       })
     })
   }
@@ -48,7 +54,14 @@ class Header extends Component {
             <h2>Emp <img className="text-center welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
           </Col>
           <Col sm={4}>
-            <p className="welcome_name"><img className="text-center welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;<Link to="/" onClick={this.logout}><img className="text-center welcome-user" src={ Circle } alt="logout logo"/>&nbsp;Logout</Link></p>
+            <p className="welcome_name"><img className="text-center welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;
+              { this.state.isUser &&
+                <span>
+                  <img className="text-center welcome-user" src={ Clipboard } alt="patient number"/>&nbsp;{this.state.patient_number}&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+              }
+              <Link to="/" onClick={this.logout}><img className="text-center welcome-user" src={ Circle } alt="logout logo"/>&nbsp;Logout</Link>
+            </p>
           </Col>
         </Row>
         </div>
