@@ -55,6 +55,14 @@
   padding: 1em 2em 0.25em 2em
 }
 
+.entries_side h2, .entries_side h4 {
+  display: inline-block;
+}
+
+.entries_side h4{
+  margin-left: 2em;
+}
+
 .entries_side .description {
   width: 70%;
   color: rgb(58, 138, 158);
@@ -66,23 +74,27 @@
   font-size: 2.25em;
 }
 
-.entry_div {
-  width: 90%;
-  height: auto;
+.outer_journal_div {
+  height: 400px;
+  width: 85%;
   background-color: rgba(249, 249, 249, .7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin: 2em;
+  overflow: scroll;
 }
 
-
-.outer_journal_div {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.entry_div {
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+.sentiment-p {
+  border-top: 1px solid rgb(23, 54, 71);
+  font-size: 1.35em;
+  text-transform: uppercase;
+  color: rgb(43, 102, 117);
+  font-weight: 500;
+  padding-top: 8px;
 }

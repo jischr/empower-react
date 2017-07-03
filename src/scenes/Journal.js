@@ -28,7 +28,8 @@ class Journal extends Component {
       return res.json().then((user) => {
         if (user.journals) {
           let journals = user.journals.map((entry) => {
-            return (<div key={entry.id} className="entry_div"><h2>{entry.title} {res.created_at}</h2><h4>{res.created_at}</h4><p>{entry.content}</p><p>Sentiment: <i className={entry.sentiment}></i></p></div>)
+            let date = entry.created_at.substring(5, 10) + '-' + entry.created_at.substring(0, 4)
+            return (<div key={entry.id} className="entry_div"><h2>{entry.title}</h2><h4 className="text-right">{date}</h4><p>{entry.content}</p><p className="sentiment-p">Sentiment: <i className={entry.sentiment}></i></p></div>)
           })
           this.setState({journals: journals, user_id: user_id})
         }
@@ -95,7 +96,8 @@ class Journal extends Component {
         }).then((res) => {
           return res.json().then((res) => {
             let journals = this.state.journals
-            journals.push(<div key={res.id} className="entry_div"><h2>{res.title}</h2><h4>{res.created_at}</h4><p> {res.content}</p><p>Sentiment: <i className={res.sentiment}></i></p></div>)
+            let date = res.created_at.substring(5, 10) + '-' + res.created_at.substring(0, 4)
+            journals.unshift(<div key={res.id} className="entry_div"><h2>{res.title}</h2><h4 className="text-right">{date}</h4><p> {res.content}</p><p className="sentiment-p">Sentiment: <i className={res.sentiment}></i></p></div>)
             this.setState(journals: journals)
           })
         })
