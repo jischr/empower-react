@@ -43,7 +43,7 @@ class Header extends Component {
     return (
       <div>
         <div className="well well-large welcome text-center">
-        <Row>
+        <Row className="welcome-row">
           <Col sm={7}>
             <h2>Emp <img className="text-center welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
           </Col>

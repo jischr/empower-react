@@ -8,6 +8,7 @@
   margin: 0px;
   height: auto;
   border: 1px solid darkgrey;
+  border-radius: 0%;
   padding: 3px 0 3px 0;
 }
 
@@ -39,6 +40,10 @@
   height: auto;
 }
 
+.welcome-row {
+  margin-right: 0px;
+}
+
 .alternatives {
   width: 75%;
   display: flex;
@@ -62,7 +67,7 @@
 }
 
 .home-right {
-  background-color: rgb(58, 138, 158);
+  background-color: rgb(51, 167, 190);
   height: 700px;
   display: flex;
   flex-direction: column;
@@ -93,13 +98,17 @@
 }
 
 .home-left {
-  background-color: #75adbb;
+  /*background-color: #75adbb;*/
+  background-color: #97d7e3;
   height:700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /*color: rgb(23, 54, 71);*/
   color: rgb(23, 54, 71);
+  /*color: #28606e;*/
+
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -130,6 +139,7 @@
 .alt-content {
   width: 60%;
 }
+
 .check-in-heading {
   font-size: .65em;
   font-weight: 200;
@@ -157,7 +167,7 @@
   align-item: left;
   border-radius: 1px;
   border: none;
-  background-color: rgb(23, 54, 71);
+  background-color: #33a7be;
   color: rgb(232, 232, 232);
   font-size: 1.25em;
   text-transform: uppercase;

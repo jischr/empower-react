@@ -7,3 +7,8 @@ body {
 .control-label {
   font-weight: normal;
 }
+
+.row {
+  margin: 0px;
+  padding: 0px;
+}
