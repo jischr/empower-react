@@ -9,7 +9,6 @@ class Home extends Component {
   render() {
     let cookies = new Cookies()
     if (!cookies.get('isLoggedIn')) {
-      cookies.remove()
       return <Redirect to={"/"}/>
     }
     else if (+cookies.get('isUser')) {

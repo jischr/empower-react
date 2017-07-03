@@ -35,22 +35,19 @@
   margin-top: 10px;
 }
 
-.home_row {
-  /*margin-top: -1.25em;*/
-}
 .home-user-grid {
   height: auto;
 }
 
 .alternatives {
-  background-color: rgba(255, 255, 255, .6);
+  /*background-color: rgba(255, 255, 255, .6);*/
   width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 15px;
-  margin: 14em 0em 14em 0em
+  /*padding-bottom: 15px;*/
+  /*margin: 5em 0em 14em 0em*/
 }
 
 .alternatives input {
@@ -60,25 +57,26 @@
 .alt-form {
   display: inline-block;
 }
+
 .home-right {
-  background-image: url('./images/splash.jpg');
+  background-color: rgb(58, 138, 158);
   height: 700px;
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-right: 0px;
   padding-left: 0px;
+  color: rgb(23, 54, 71);
+
 }
 
 .alternatives button, .alternatives button:hover, .alternatives button:active, .alternatives .btn-default:hover, .alternatives .btn-default:active  {
   margin-left: 10px;
   border-radius: 1px;
   border: none;
-  background-color: rgb(58, 138, 158);
-  color: rgb(232, 232, 232);
+  background-color: rgb(249, 249, 249);
+  color: rgb(58, 138, 158);
   font-size: .5em;
   height: 30px;
   width: 30px;
@@ -86,12 +84,16 @@
 }
 
 .home-right h1 {
-  font-weight: 700;
-  color: #33A7BE;
+  font-weight: 200;
+  color: rgb(23, 54, 71);
+  font-size: 5em;
 }
 
+.home-right p {
+  width: 60%;
+}
 .home-left {
-  background-color: #fcf1a7;
+  background-color: #75adbb;
   height:700px;
   display: flex;
   flex-direction: column;
@@ -103,7 +105,7 @@
 }
 
 .home-left h1 {
-  font-weight: 700;
+  font-weight: 800;
   font-size:4em;
   margin-bottom: 0px;
   padding-top: 1em;
@@ -112,20 +114,13 @@
 .home-left h3 {
   font-family: 'Sacramento', sans-serif;
   margin-top: 7px;
-  font-size: 2.5em;
+  font-size: 6em;
   margin-left: 2em;
   margin-right: 2em;
 }
 
 .alt-heading {
- margin-left: 2em;
  padding-bottom: 1em;
-}
-
-.home-left p {
-  margin-left: 3.5em;
-  margin-right: 1.5em;
-  font-size: 1.2em;
 }
 
 .alt-content-heading {
@@ -170,8 +165,17 @@
   padding: 2em 2em 1em 2em;
   background-color: rgba(255, 255, 255, .1);
   height: 100%;
-  width: 55%;
 }
+
+.cloud svg{
+  height: 50%;
+  width: 50%;
+}
+
+.cloud path {
+  fill: rgb(249, 249, 249);
+}
+
 .footer {
   background-color: rgb(23, 54, 71);
   color: rgb(235, 238, 238);

@@ -36,6 +36,7 @@ class Header extends Component {
     cookies.remove('isLoggedIn')
     cookies.remove('id')
     cookies.remove('isUser')
+    cookies.remove('name')
   }
 
   render() {
