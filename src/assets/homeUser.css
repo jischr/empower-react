@@ -27,7 +27,7 @@
 
 .welcome_name a {
   color: rgb(57, 57, 57);
-  
+
 }
 
 .welcome h2 {
@@ -62,7 +62,7 @@
 }
 .home-right {
   background-image: url('./images/splash.jpg');
-  height: 746px;
+  height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -92,7 +92,7 @@
 
 .home-left {
   background-color: #fcf1a7;
-  height:746px;
+  height:700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
