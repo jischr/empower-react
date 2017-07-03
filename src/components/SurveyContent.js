@@ -78,8 +78,10 @@ class SurveyContent extends Component {
         <Row>
           <Col xs={12} sm={6} className="question_side">
                 <h4><span>Over the past few days,</span> <br /> have you been bothered by any of the following problems?</h4>
-                <hr />
-                <img src={Arrow} alt="arrow logo" className="arrow_logo"/>
+                <div className="text-center">
+                  <hr />
+                  <img src={Arrow} alt="arrow logo" className="arrow_logo"/>
+                </div>
                 <h1 className="text-center">{question_num}</h1>
           </Col>
           <Col xs={12} sm={6} className="answer_side">

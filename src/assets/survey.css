@@ -1,6 +1,5 @@
 .question_side {
   height: 700px;
-  margin-top: -1.5em;
   background-color: rgb(58, 138, 158);
   color: rgb(232, 232, 232);
   font-weight: 200;
@@ -21,7 +20,8 @@
 }
 
 .question_side hr {
-  margin: 0 3em 1em 3em;
+  width: 75%;
+  display: inline-block;
 }
 
 .question_side h1 {
@@ -40,14 +40,13 @@
 
 .arrow_logo {
   background-color: rgb(58, 138, 158);
-  margin-left: 46em;
-  margin-top: -3.75em;
+  margin-top: -2.75em;
   height: 5em;
+  display: inline-block;
 }
 
 .answer_side {
   height: 700px;
-  margin-top: -1.5em;
   background-color: rgb(23, 54, 71);
   color: rgb(232, 232, 232);
   display: flex;
