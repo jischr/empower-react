@@ -29,7 +29,12 @@ class Alternatives extends Component {
     let cookie = new Cookies()
     let user_id = cookie.get('id')
 
-    fetch(`${API_URL}/v1/users/${user_id}`)
+    fetch(`${API_URL}/v1/users/${user_id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: cookie.get('token')
+      }
+    })
     .then(res => {
       return res.json().then((user) => {
         if (user.alternatives) {
@@ -55,7 +60,8 @@ class Alternatives extends Component {
       body: JSON.stringify({ text: this.state.text, user_id: user_id}),
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': cookies.get('token')
       }
     }).then(res => {
       return res.json().then((res) => {
@@ -69,11 +75,13 @@ class Alternatives extends Component {
   }
 
   deleteAlternative(e) {
+    let cookie = new Cookies()
     fetch(`${API_URL}/v1/alternatives/${e.target.id}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': cookie.get('token')
       }
     }).then(res => {
       return res.text()

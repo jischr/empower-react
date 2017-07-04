@@ -5,8 +5,8 @@ import
     HelpBlock,
     Button
   } from 'react-bootstrap'
+import { Cookies } from 'react-cookie'
 import { API_URL } from '../config'
-
 
 class AddUser extends Component {
   constructor(props) {
@@ -33,6 +33,7 @@ class AddUser extends Component {
     this.setState({ patient_number: e.target.value})
   }
   handleSubmit(e) {
+    let cookie = new Cookies()
     e.preventDefault()
     let patient_number = this.state.patient_number
     fetch(`${API_URL}/v1/users/${patient_number}`, {
@@ -40,7 +41,8 @@ class AddUser extends Component {
       body: JSON.stringify({ clinician_id: this.props.c_id}),
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': cookie.get('token')
       }
     }).then(res => {
       return res.json()

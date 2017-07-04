@@ -61,13 +61,16 @@ class LoginForm extends Component {
         expiration.setTime(expiration.getTime() + milliSecInDay)
         // set cookie (depending on if user or clinician)
         if (loginRes.user_id) {
+          console.log(loginRes)
           cookies.set('id', loginRes.user_id, {path:'/', expires: expiration})
           cookies.set('isUser', 1, {path:'/', expires: expiration})
           cookies.set('name', loginRes.name, {path:'/', expires: expiration})
+          cookies.set('token', loginRes.auth_token, {path:'/', expires: expiration})
         }
         if (loginRes.clinician_id) {
           cookies.set('id', loginRes.clinician_id, {path:'/', expires: expiration})
           cookies.set('isUser', 0, {path:'/', expires: expiration})
+          cookies.set('token', loginRes.auth_token, {path:'/', expires: expiration})
         }
         // keep track of login status
         cookies.set('isLoggedIn', 1, {path:'/', expires: expiration})

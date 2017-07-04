@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { API_URL } from '../config'
 import { Col, Row, Button } from 'react-bootstrap'
+import { Cookies } from 'react-cookie'
 import '../assets/graphs.css'
 
 import {Line} from 'react-chartjs-2'
@@ -36,8 +37,14 @@ class Charts extends Component {
   }
 
   getGraphData() {
+    let cookie = new Cookies()
     let user_id = window.location.href.split('/')[4]
-    fetch(`${API_URL}/v1/users/scores/${user_id}`)
+    fetch(`${API_URL}/v1/users/scores/${user_id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: cookie.get('token')
+      }
+    })
     .then(res => {
       return res.json().then((user) => {
         let label_list = []
@@ -65,12 +72,14 @@ class Charts extends Component {
   }
 
   sendSMS() {
+    let cookie = new Cookies()
     fetch(`${API_URL}/twilio`, {
       method: 'POST',
       body: JSON.stringify({phone_number: this.state.phone_number, user_name: this.state.first_name}),
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': cookie.get('token')
       }
     }).then(res => {
       return res.json().then((response) => {
