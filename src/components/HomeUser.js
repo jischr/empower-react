@@ -5,7 +5,6 @@ import { Row,
          Col } from 'react-bootstrap'
 import { Cookies } from 'react-cookie'
 
-import SideNavUser from './SideNavUser'
 import Alternatives from './Alternatives'
 import Header from './Header'
 
@@ -26,7 +25,6 @@ class HomeUser extends Component {
   render() {
     return (
       <div>
-        <SideNavUser />
         <Header />
         <div>
           <Row className="home_row home-user-grid row_height">

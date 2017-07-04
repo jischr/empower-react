@@ -15,7 +15,6 @@ class Survey extends Component {
     else if (+cookies.get('isUser')) {
       return (
         <div>
-          <SideNavUser />
           <Header />
           <SurveyContent />
         </div>

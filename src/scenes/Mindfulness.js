@@ -6,7 +6,6 @@ import {
   Col,
 } from 'react-bootstrap'
 
-import SideNavUser from '../components/SideNavUser'
 import Header from '../components/Header'
 import '../assets/mindfulness.css'
 
@@ -19,7 +18,6 @@ class Mindfulness extends Component {
     else if (+cookies.get('isUser')) {
       return (
         <div>
-          <SideNavUser />
           <Header />
           <Row className="mindful row_height">
             <Col xs={12} sm={6} className="mindful-about">

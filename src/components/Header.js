@@ -28,7 +28,6 @@ class Header extends Component {
     let cookies = new Cookies()
     let id = cookies.get('id')
     let isUser = +cookies.get('isUser') ? true : false
-
     let userStatus = isUser ? 'users' : 'clinicians'
     fetch(`${API_URL}/v1/${userStatus}/${id}`, {
       method: 'GET',
@@ -58,16 +57,16 @@ class Header extends Component {
       <div>
         <div className="well well-large welcome">
         <Row className="welcome-row">
-          <Col md={9} sm={12}>
-          { this.state.isUser &&
+          <Col md={8} sm={6} xs={12}>
+          { this.state.isUser && this.state.isUser !== '' &&
             <SideNavUser />
           }
-          { !this.state.isUser &&
+          { !this.state.isUser && this.state.isUser !== '' &&
             <SideNavC usersToChild={this.props.usersToChild}/>
           }
           <h2>Emp <img className="welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
           </Col>
-          <Col md={3} sm={12}>
+          <Col md={4} sm={6} xs={12}>
             <p className="welcome_name"><img className=" welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;
               { this.state.isUser &&
                 <span>
