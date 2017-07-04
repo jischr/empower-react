@@ -27,7 +27,12 @@ class Header extends Component {
     let isUser = +cookies.get('isUser') ? true : false
 
     let userStatus = isUser ? 'users' : 'clinicians'
-    fetch(`${API_URL}/v1/${userStatus}/${id}`)
+    fetch(`${API_URL}/v1/${userStatus}/${id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: cookies.get('token')
+      }
+    })
     .then(res => {
       return res.json().then((user) => {
         let full_name = `${user.first_name} ${user.last_name}`
@@ -42,6 +47,7 @@ class Header extends Component {
     cookies.remove('id')
     cookies.remove('isUser')
     cookies.remove('name')
+    cookies.remove('token')
   }
 
   render() {

@@ -50,7 +50,8 @@ class SurveyContent extends Component {
         body: JSON.stringify({ score_value: score_val, user_id: user_id, measure_id: 1}),
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': cookies.get('token')
         }
       }).then(res => {
         this.setState({redirect: true})

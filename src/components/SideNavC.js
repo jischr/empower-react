@@ -16,6 +16,7 @@ class Sidebar extends Component {
     cookies.remove('isLoggedIn')
     cookies.remove('id')
     cookies.remove('isUser')
+    cookies.remove('token')
   }
 
   componentWillReceiveProps(nextProps) {

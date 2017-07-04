@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { API_URL } from '../config'
 import { Col, Row, Button } from 'react-bootstrap'
+import { Cookies } from 'react-cookie'
 import '../assets/graphs.css'
 
 import {Line} from 'react-chartjs-2'
@@ -21,16 +22,29 @@ class Charts extends Component {
       most_recent_score: '',
       phone_number: '',
       error: '',
-      success: ''
+      success: '',
+      user_id: ''
     }
 
     this.sendSMS = this.sendSMS.bind(this)
+    this.getGraphData = this.getGraphData.bind(this)
   }
 
-  componentWillMount() {
-    console.log('HERE!!!!!')
+  componentWillUpdate(nextProps, nextState) {
+    if (window.location.href.split('/')[4] !== this.state.user_id) {
+      this.getGraphData()
+    }
+  }
+
+  getGraphData() {
+    let cookie = new Cookies()
     let user_id = window.location.href.split('/')[4]
-    fetch(`${API_URL}/v1/users/scores/${user_id}`)
+    fetch(`${API_URL}/v1/users/scores/${user_id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: cookie.get('token')
+      }
+    })
     .then(res => {
       return res.json().then((user) => {
         let label_list = []
@@ -50,19 +64,22 @@ class Charts extends Component {
           created_at: date,
           sex: user.sex,
           most_recent_score: scores_list[scores_list.length - 1],
-          phone_number: user.phone_number
+          phone_number: user.phone_number,
+          user_id: user_id
         })
       })
     })
   }
 
   sendSMS() {
+    let cookie = new Cookies()
     fetch(`${API_URL}/twilio`, {
       method: 'POST',
       body: JSON.stringify({phone_number: this.state.phone_number, user_name: this.state.first_name}),
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': cookie.get('token')
       }
     }).then(res => {
       return res.json().then((response) => {

@@ -22,10 +22,15 @@ class HomeClinician extends Component {
   }
 
   componentWillMount() {
-    let cookies = new Cookies()
-    let c_id = cookies.get('id')
+    let cookie = new Cookies()
+    let c_id = cookie.get('id')
     this.setState({ c_id: c_id })
-    fetch(`${API_URL}/v1/clinicians/${c_id}`)
+    fetch(`${API_URL}/v1/clinicians/${c_id}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': cookie.get('token')
+      }
+    })
     .then(res => {
       return res.json().then((clinician) => {
         let usersToChild = []

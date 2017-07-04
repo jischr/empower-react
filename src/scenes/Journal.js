@@ -23,10 +23,14 @@ class Journal extends Component {
     let cookie = new Cookies()
     let user_id = cookie.get('id')
 
-    fetch(`${API_URL}/v1/journals/user/${user_id}`)
+    fetch(`${API_URL}/v1/journals/user/${user_id}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': cookie.get('token')
+      }
+    })
     .then(res => {
       return res.json().then((journals) => {
-        console.log(journals);
         if (journals) {
           let journalsList = journals.map((entry) => {
             let date = entry.created_at.substring(5, 10) + '-' + entry.created_at.substring(0, 4)
@@ -68,25 +72,23 @@ class Journal extends Component {
       })
       .done((dataSentiment) => {
         if (dataSentiment.documents[0].score < .33) {
-          console.log('sad', dataSentiment.documents[0].score)
           this.setState({sentiment: 'fa fa-frown-o sentiment-icon'})
         } else if (dataSentiment.documents[0].score < .66) {
-          console.log('average', dataSentiment.documents[0].score)
           this.setState({sentiment: 'fa fa-meh-o sentiment-icon'})
         } else {
-          console.log('happy', dataSentiment.documents[0].score)
           this.setState({sentiment: 'fa fa-smile-o sentiment-icon'})
         }
       })
       .fail(err => {
         console.log(err)
       }).then(() => {
-        console.log('posting in post', this.state.sentiment)
+        let cookie = new Cookies()
         fetch(`${API_URL}/v1/journals/`, {
           method: 'POST',
           headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': cookie.get('token')
           },
           body: JSON.stringify({
             user_id: this.state.user_id,
