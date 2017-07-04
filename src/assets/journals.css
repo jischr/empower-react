@@ -1,5 +1,5 @@
 .row_height {
-  height: 700px;
+  height: 645px;
 }
 
 .form_side {
@@ -16,7 +16,7 @@
 }
 
 .form_side textarea {
-  height: 300px
+  height: 240px
 }
 
 .form_side h3 {
@@ -52,7 +52,8 @@
   font-weight: 700;
   border-bottom: 1px solid rgb(58, 138, 158);
   font-size: 3.25em;
-  padding: 1em 2em 0.25em 2em
+  padding: 0em 2em 0.25em 2em;
+  margin-top: 0;
 }
 
 .entries_side h2, .entries_side h4 {
@@ -75,18 +76,18 @@
 }
 
 .outer_journal_div {
-  height: 400px;
+  height: 300px;
   width: 85%;
   background-color: rgba(249, 249, 249, .7);
-  /*display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;*/
   overflow: scroll;
 }
 
 .entry_div {
-  padding: 1.5em;
+  padding: 0.75em;
+}
+
+.entry_div h2 {
+  
 }
 
 .sentiment-p {

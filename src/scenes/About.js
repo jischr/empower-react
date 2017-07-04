@@ -21,7 +21,7 @@ class Home extends Component {
         </div>
         <img src={ Arrow } alt="arrow-down" className="arrow-down text-center" />
       </div>
-      <Row class="upper-row">
+      <Row className="upper-row">
         <Col sm={12} md={6} className="about-left">
           <h3>An Empowerment Model</h3>
         </Col>

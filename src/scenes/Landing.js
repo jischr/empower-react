@@ -9,7 +9,6 @@ import SignupForm from '../components/SignupForm'
 class Landing extends Component {
   render() {
     return (
-      <div>
       <div className="background_image">
           <div className="container-fluid splash">
             <div className="splash-content">
@@ -31,10 +30,6 @@ class Landing extends Component {
               <Link to="/about">TO ABOUT</Link>
             </div>
           </div>
-      </div>
-        <div className="about_div" id="about">
-          <h1>About</h1>
-        </div>
       </div>
     )
   }
