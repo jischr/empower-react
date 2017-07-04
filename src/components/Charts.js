@@ -21,14 +21,21 @@ class Charts extends Component {
       most_recent_score: '',
       phone_number: '',
       error: '',
-      success: ''
+      success: '',
+      user_id: ''
     }
 
     this.sendSMS = this.sendSMS.bind(this)
+    this.getGraphData = this.getGraphData.bind(this)
   }
 
-  componentWillMount() {
-    console.log('HERE!!!!!')
+  componentWillUpdate(nextProps, nextState) {
+    if (window.location.href.split('/')[4] !== this.state.user_id) {
+      this.getGraphData()
+    }
+  }
+
+  getGraphData() {
     let user_id = window.location.href.split('/')[4]
     fetch(`${API_URL}/v1/users/scores/${user_id}`)
     .then(res => {
@@ -50,7 +57,8 @@ class Charts extends Component {
           created_at: date,
           sex: user.sex,
           most_recent_score: scores_list[scores_list.length - 1],
-          phone_number: user.phone_number
+          phone_number: user.phone_number,
+          user_id: user_id
         })
       })
     })
