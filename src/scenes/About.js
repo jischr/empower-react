@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 import { Grid, Row, Col } from 'react-bootstrap'
 
+import { Github } from '../assets/images/github.svg'
 import Landing from './Landing'
-
 import '../assets/about.css'
 import Sun from '../assets/images/sun.svg'
 import Arrow from '../assets/images/chevron-down.svg'
@@ -38,12 +38,20 @@ class Home extends Component {
         <Row>
           <Col sm={12} md={4}>
             <img src={ Jen } alt="Jennifer" className="profile-pic text-center" />
+            <h2>Jennifer Winer</h2>
+            <p>Developer</p>
+            <p><Link to="https://www.linkedin.com/in/jenniferwiner/" target="blank"></Link><Link to="https://github.com/jenniferwiner/" target="blank"><img src={ Github } alt="github" className="gitLogo"/></Link></p>
           </Col>
           <Col sm={12} md={4}>
             <img src={ Emily } alt="Emily" className="profile-pic text-center" />
+            <h2>Emily Ringoen</h2>
+            <p>Developer</p>
+            <p><Link to="https://www.linkedin.com/in/emily-ringoen/" target="blank"></Link><Link to="https://github.com/emilyaringoen/" target="blank"><img src={ Github } alt="github" className="gitLogo"/></Link></p>
           </Col>
           <Col sm={12} md={4}>
             <img src={ Marg } alt="Margaret" className="profile-pic text-center" />
+            <h2>Margaret ?</h2>
+            <p>Project Consultant</p>
           </Col>
         </Row>
       </Grid>
