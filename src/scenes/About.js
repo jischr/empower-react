@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 import { Grid, Row, Col } from 'react-bootstrap'
 
+import Landing from './Landing'
+
 import '../assets/about.css'
 import Sun from '../assets/images/sun.svg'
 import Arrow from '../assets/images/chevron-down.svg'
@@ -18,8 +20,8 @@ class Home extends Component {
         <div className="header-div text-center">
           <h1>Emp<img src={ Sun } alt="sun-logo" className="about-sun"/>wer</h1>
           <h4 className="about-tagline">an anxiety self-management platform</h4>
+          <Landing />
         </div>
-        <img src={ Arrow } alt="arrow-down" className="arrow-down text-center" />
       </div>
       <Row className="upper-row">
         <Col sm={12} md={6} className="about-left">
