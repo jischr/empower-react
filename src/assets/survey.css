@@ -1,5 +1,5 @@
 .question_side {
-  height: 700px;
+  height: 100%;
   background-color: rgb(58, 138, 158);
   color: rgb(232, 232, 232);
   font-weight: 200;
@@ -27,15 +27,15 @@
 .question_side h1 {
   font-family: serif;
   font-size: 9em;
-  margin-top: 0.5em;
 }
 
 .answer_side h3 {
   font-size: 2.35em;
   color: rgb(58, 138, 158);
-  padding: 0.5em 2.25em 1em 2.25em;
+  padding: 0em 2.25em 1em 2.25em;
   text-align: center;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .arrow_logo {
@@ -46,7 +46,7 @@
 }
 
 .answer_side {
-  height: 700px;
+  height: 100%;
   background-color: rgb(23, 54, 71);
   color: rgb(232, 232, 232);
   display: flex;

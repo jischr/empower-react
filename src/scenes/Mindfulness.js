@@ -21,13 +21,13 @@ class Mindfulness extends Component {
         <div>
           <SideNavUser />
           <Header />
-          <Row className="mindful">
+          <Row className="mindful row_height">
             <Col xs={12} sm={6} className="mindful-about">
                 <h1 className="header-mindfulness">mindfulness</h1> <h1 className="header-meditation">MEDITATION</h1>
                 <h4 className="mindful-about-more text-center">Mindfulness meditation is the action of training our minds to observe the present moment free of judgement.<br/><br/>It allows us create space between ourselves and our reactions, rewiring our minds from their usual responses.</h4>
             </Col>
             <Col xs={12} sm={6} className="mindful-soundcloud text-center">
-              <br/><br/>
+              <br/>
               <div>
                 <iframe title="sc-widget2" width="75%" height="100" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/mindfulmagazine/6-minute-mountain-meditation-to-help-you-shift-out-of-panic-mode"></iframe>
               </div>

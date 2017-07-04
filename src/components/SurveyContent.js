@@ -76,7 +76,7 @@ class SurveyContent extends Component {
     let question_num = this.state.question_id + 1
     return (
       <div>
-        <Row>
+        <Row className="row_height">
           <Col xs={12} sm={6} className="question_side">
                 <h4><span>Over the past few days,</span> <br /> have you been bothered by any of the following problems?</h4>
                 <div className="text-center">

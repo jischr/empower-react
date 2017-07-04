@@ -1,10 +1,9 @@
-.Side-nav {
+/*.Side-nav {
   display: inline;
-}
+}*/
 
 .sidenav_openbtn {
-    margin: 1.2em;
-
+  margin: 1.2em;
 }
 
 .sidenav_openbtn span {
@@ -40,6 +39,27 @@
 .Sidebar.modal {
   max-width: 100%;
   background-color: rgb(240, 240, 240);
+}
+
+.Sidebar.modal.left {
+  right: auto;
+}
+
+.Sidebar.modal .modal-dialog {
+  margin: 0;
+  width: auto;
+}
+
+.Sidebar.modal .modal-dialog .modal-content {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.Sidebar.modal .modal-dialog .modal-content .modal-body {
+  padding: 0;
+}
+.Sidebar.modal.fade:not(.in).left .modal-dialog {
+  transform: translate3d(-100%, 0, 0);
 }
 
 .modal-logo {
@@ -164,6 +184,9 @@
 }
 
 .clinician_div {
+  /*position: absolute;
+  bottom: 0;
+  left: 0;*/
   margin-top: 11.5em;
   margin-bottom: 0;
   background-color: rgb(26, 62, 80);

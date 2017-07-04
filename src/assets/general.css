@@ -12,3 +12,9 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.row_height {
+  height: 90vh;
+  width: 100%;
+  overflow: auto;
+}

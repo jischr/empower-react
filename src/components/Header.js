@@ -9,10 +9,13 @@ import Sun from '../assets/images/sun.svg'
 import Man from '../assets/images/user.svg'
 import Circle from '../assets/images/x-circle.svg'
 import Clipboard from '../assets/images/clipboard.svg'
+import SideNavUser from './SideNavUser'
+import SideNavC from './SideNavC'
+
 
 class Header extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = { name: '',
       patient_number: '',
       isUser: ''
@@ -53,19 +56,25 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <div className="well well-large welcome text-center">
+        <div className="well well-large welcome">
         <Row className="welcome-row">
-          <Col sm={7}>
-            <h2>Emp <img className="text-center welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
+          <Col md={9} sm={12}>
+          { this.state.isUser &&
+            <SideNavUser />
+          }
+          { !this.state.isUser &&
+            <SideNavC usersToChild={this.props.usersToChild}/>
+          }
+          <h2>Emp <img className="welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
           </Col>
-          <Col sm={4}>
-            <p className="welcome_name"><img className="text-center welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;
+          <Col md={3} sm={12}>
+            <p className="welcome_name"><img className=" welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;
               { this.state.isUser &&
                 <span>
-                  <img className="text-center welcome-user" src={ Clipboard } alt="patient number"/>&nbsp;{this.state.patient_number}&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img className="welcome-user" src={ Clipboard } alt="patient number"/>&nbsp;{this.state.patient_number}&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
               }
-              <Link to="/" onClick={this.logout}><img className="text-center welcome-user" src={ Circle } alt="logout logo"/>&nbsp;Logout</Link>
+              <Link to="/" onClick={this.logout}><img className="welcome-user" src={ Circle } alt="logout logo"/>&nbsp;Logout</Link>
             </p>
           </Col>
         </Row>

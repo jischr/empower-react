@@ -1,7 +1,3 @@
-.row_height {
-  height: 645px;
-}
-
 .form_side {
   height: 100%;
   background-color: rgb(58, 138, 158);
@@ -53,7 +49,7 @@
   border-bottom: 1px solid rgb(58, 138, 158);
   font-size: 3.25em;
   padding: 0em 2em 0.25em 2em;
-  margin-top: 0;
+  margin-top: -0.5em;
 }
 
 .entries_side h2, .entries_side h4 {
@@ -65,9 +61,10 @@
 }
 
 .entries_side .description {
-  width: 70%;
+  width: 75%;
   color: rgb(58, 138, 158);
   font-size: 1.25em;
+  padding-bottom: 1.5em;
 }
 
 .description span {
@@ -78,16 +75,16 @@
 .outer_journal_div {
   height: 300px;
   width: 85%;
-  background-color: rgba(249, 249, 249, .7);
+  background-color: rgba(255, 255, 255, 1);
   overflow: scroll;
 }
 
 .entry_div {
-  padding: 0.75em;
+  padding: 1em;
 }
 
 .entry_div h2 {
-  
+  margin-top: 0;
 }
 
 .sentiment-p {

@@ -70,12 +70,9 @@ class SideNavC extends Component {
   updateModal(isVisible) {
     this.setState({
       isVisible: isVisible,
-      instaShow: false
     })
     this.forceUpdate()
   }
-
-
 
 	render() {
     let usersToChild = this.props.usersToChild

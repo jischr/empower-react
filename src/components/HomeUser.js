@@ -29,7 +29,7 @@ class HomeUser extends Component {
         <SideNavUser />
         <Header />
         <div>
-          <Row className="home_row home-user-grid">
+          <Row className="home_row home-user-grid row_height">
             <Col md={6} className="home-left">
               <div className="text-center">
                 <h1>WELCOME</h1>

@@ -48,8 +48,7 @@ class HomeClinician extends Component {
     let c_id = this.state.c_id
     return (
       <div>
-        <SideNavC usersToChild={usersToChild} />
-        <Header />
+        <Header usersToChild={usersToChild} />
         <Row className="home_clinician">
         { window.location.pathname === '/home' &&
           <div>
