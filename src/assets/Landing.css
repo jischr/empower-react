@@ -36,13 +36,15 @@
 }
 
 .login {
+  width: 80%;
   height: auto;
   padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /*align-items: center;*/
   background-color: rgba(255, 255, 255, .8);
+  margin: 1.5em auto;
 }
 
 .login .error {

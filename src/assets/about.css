@@ -1,6 +1,6 @@
 .about-div {
   background-color: #97d7e3;
-  height: 55vh;
+  height: auto;
   border-radius: 0px;
   border: none;
   display: flex;
@@ -10,12 +10,8 @@
   margin-bottom: 0;
 }
 
-.header-div {
-  width: 30%;
-}
-
 .about-div h1 {
-  font-size: 3.75em;
+  font-size: 4.75em;
   color: rgb(23, 54, 71);
   font-weight: 700;
   border-bottom: 1px solid #d9d3d3;
@@ -30,6 +26,7 @@
 .about-tagline {
   color: rgb(23, 54, 71);
   font-size: 1.5em;
+  padding-bottom: 1em;
 }
 
 .arrow-down {

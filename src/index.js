@@ -17,7 +17,6 @@ ReactDOM.render(
     <div className="App">
       <Route exact path="/" component={ About }></Route>
       <Route exact path="/home" component={ Home }></Route>
-      <Route exact path="/about" component={ About }></Route>
       <Route exact path="/survey" component={ Survey }></Route>
       <Route exact path="/signup" component={ About }></Route>
       <Route path="/graph" component={ Home }></Route>
