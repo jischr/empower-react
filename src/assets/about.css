@@ -1,0 +1,84 @@
+.about-div {
+  background-color: rgb(47, 127, 149);
+  height: 55vh;
+  border-radius: 0px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.header-div {
+  width: 30%;
+}
+
+.about-div h1 {
+  font-size: 3.75em;
+  color: rgb(23, 54, 71);
+  font-weight: 700;
+  border-bottom: 1px solid #d9d3d3;
+  padding: .25em;
+}
+
+.about-sun {
+  height: 1.75em;
+  padding: 0 7px 0 7px;
+}
+
+.about-tagline {
+  color: rgb(23, 54, 71);
+  font-size: 1.5em;
+}
+
+.arrow-down {
+  padding: 0.85em 0.5em 0.15em 0.5em;
+  height: 4.25em;
+  border-radius: 50%;
+  margin-top: 3.65em;
+  background-color: rgb(47, 127, 149);
+}
+
+.about-left {
+  background-color: rgb(249, 247, 236);
+  height: 365px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-right .inner-div {
+  width: 80%;
+}
+
+.about-left h3 {
+  color: rgb(47, 127, 149);
+  text-transform: uppercase;
+  font-size: 2.35em;
+  font-weight: 700;
+}
+
+.about-right p {
+  font-size: 1.15em;
+  font-weight: 200;
+  color:rgb(249, 247, 236);
+}
+
+.about-right {
+  background-color: rgb(23, 54, 71);
+  height: 365px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 90%;
+}
+
+.about-grid {
+  margin-top: 2em;
+}

@@ -28,7 +28,7 @@ class Landing extends Component {
                   <h5><Link to="/">Back to Login</Link></h5>
                 </div>
               }
-              <Link to="#about">TO ABOUT</Link>
+              <Link to="/about">TO ABOUT</Link>
             </div>
           </div>
       </div>

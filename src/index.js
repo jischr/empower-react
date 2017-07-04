@@ -7,6 +7,7 @@ import Home from './scenes/Home'
 import Survey from './scenes/Survey'
 import Mindfulness from './scenes/Mindfulness'
 import Journal from './scenes/Journal'
+import About from './scenes/About'
 
 import registerServiceWorker from './registerServiceWorker'
 import './assets/general.css'
@@ -16,6 +17,7 @@ ReactDOM.render(
     <div className="App">
       <Route exact path="/" component={ Landing }></Route>
       <Route exact path="/home" component={ Home }></Route>
+      <Route exact path="/about" component={ About }></Route>
       <Route exact path="/survey" component={ Survey }></Route>
       <Route exact path="/signup" component={ Landing }></Route>
       <Route path="/graph" component={ Home }></Route>
