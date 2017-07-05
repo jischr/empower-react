@@ -4,6 +4,7 @@
 
 .welcome {
   background-color: rgb(237, 237, 237);
+  color: rgb(23, 54, 71);
   border-bottom: 0px;
   margin: 0px;
   height: auto;
@@ -17,7 +18,9 @@
 }
 
 .welcome_name {
+  text-align: right;
   margin-top: 1.5em;
+  margin-left: 1em;
   font-size: 1.1em;
 }
 
@@ -26,13 +29,13 @@
 }
 
 .welcome_name a {
-  color: rgb(57, 57, 57);
-
+  color: rgb(23, 54, 71);
 }
 
 .welcome h2 {
   text-align: left;
   margin-top: 10px;
+  color: rgb(23, 54, 71);
 }
 
 .welcome-row {
@@ -194,4 +197,34 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  /* HOME USER */
+  .welcome_name {
+    text-align: left;
+  }
+  .home-right h1 {
+    font-size: 3.5em;
+  }
+  .home-right {
+    padding-top: 1em;
+    height: auto;
+  }
+}
+
+/* iPhone 5 */
+@media only screen and (min-width: 320px) and (max-width: 349px) {
+  /* HOME USER */
+  .welcome_name {
+    margin-left: 0px;
+  }
+  .home-right h1 {
+    font-size: 3em;
+  }
+  .home-right h2 {
+    font-size: 2em;
+    margin-top: 0px;
+  }
 }

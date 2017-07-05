@@ -4,8 +4,6 @@ import { API_URL } from '../config'
 import { Row, Col, Button, FormGroup, FormControl, HelpBlock } from 'react-bootstrap'
 import $ from 'jquery'
 
-
-import SideNavUser from '../components/SideNavUser'
 import Header from '../components/Header'
 import '../assets/journals.css'
 
@@ -111,7 +109,6 @@ class Journal extends Component {
   render() {
     return (
       <div>
-      <SideNavUser />
       <Header />
       <Row className="row_height">
       <Col sm={6} className="form_side">
@@ -143,7 +140,9 @@ class Journal extends Component {
       </Col>
 
       <Col sm={6} className="entries_side">
-        <h1>Your Journal</h1>
+        <div className="text-center">
+          <h1>Your Journal</h1>
+        </div>
         <p className="text-center description">Just the act of recording your thoughts reduces anxiety.<br/><span>why not give it a try?</span></p>
         <div className="outer_journal_div">{this.state.journals}</div>
       </Col>

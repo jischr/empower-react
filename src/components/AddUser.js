@@ -58,10 +58,10 @@ class AddUser extends Component {
   }
   render () {
     return (
-      <div>
+      <div className="text-center">
         <h2>Connect <span>with your</span> Patients</h2>
         <hr />
-        <form onSubmit={this.handleSubmit} className="enter_patient_form">
+        <form onSubmit={this.handleSubmit} className="enter_patient_form text-center">
           <FormGroup>
             <FieldGroup
               id="formControlsFirstName"

@@ -1,6 +1,6 @@
 .add_user {
   background-color: rgb(47, 127, 149);
-  height: 700px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@
 }
 
 .enter_patient_form {
-  width: 30em;
+  width: 85%;
 }
 
 .add_user span {
@@ -34,7 +34,7 @@
 .patient_list {
   background-color: rgb(23, 54, 71);
   color: rgb(237, 237, 237);
-  height: 700px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,4 +76,11 @@
   font-size: 1.25em;
   padding-bottom: 5px;
   font-weight: 200;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width:905px) {
+  .enter_patient_form {
+    width: 85%;
+  }
 }

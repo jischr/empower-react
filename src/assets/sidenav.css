@@ -1,9 +1,7 @@
-/*.Side-nav {
-  display: inline;
-}*/
-
 .sidenav_openbtn {
   margin: 1.2em;
+  color: rgb(26, 62, 80);
+  margin-top: 1em;
 }
 
 .sidenav_openbtn span {

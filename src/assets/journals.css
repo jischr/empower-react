@@ -95,3 +95,14 @@
   font-weight: 500;
   padding-top: 8px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .row_height .form_side {
+    height: 100%
+  }
+  .row_height .entries_side {
+    height: auto;
+    padding: 5em 0em 5em 0em;
+    overflow: scroll;
+  }
+}

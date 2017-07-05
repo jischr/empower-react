@@ -79,3 +79,32 @@
   font-size: 1.25em;
   text-transform: uppercase;
 }
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 320px) and (max-width: 905px) {
+  .question_side h4 {
+    padding: 1.5em 1em 1em 1em;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .question_side {
+    height: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .answer_side {
+    height: auto;
+    padding: 2.5em;
+    font-size: .85em;
+  }
+  .answer_side h3 {
+    font-size: 2.5em;
+  }
+}
+
+/* iPhone 5 */
+@media only screen and (min-width: 320px) and (max-width: 349px) {
+  .question_side {
+    padding-top: 0;
+  }
+}

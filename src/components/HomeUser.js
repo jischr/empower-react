@@ -5,7 +5,6 @@ import { Row,
          Col } from 'react-bootstrap'
 import { Cookies } from 'react-cookie'
 
-import SideNavUser from './SideNavUser'
 import Alternatives from './Alternatives'
 import Header from './Header'
 
