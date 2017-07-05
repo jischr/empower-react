@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import Landing from './scenes/Landing'
 import Home from './scenes/Home'
 import Survey from './scenes/Survey'
 import Mindfulness from './scenes/Mindfulness'
