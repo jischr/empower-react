@@ -51,12 +51,12 @@ class HomeClinician extends Component {
         <Header usersToChild={usersToChild} />
         <Row className="home_clinician">
         { window.location.pathname === '/home' &&
-          <div>
+          <div className="row_height">
             <Col sm={6} className="add_user">
               <AddUser c_id={c_id}/>
             </Col>
-            <Col sm={6} className="patient_list">
-              <p><span>Track patient progress</span> <br /> to help them better understand their anxiety</p>
+            <Col sm={6} className="patient_list text-center">
+              <p><span>Track patient progress</span> <br /> to better understand their anxiety</p>
               <div className="patient_div">
                 <h5>Select a Patient :</h5>
                 <ul>
