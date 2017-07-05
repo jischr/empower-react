@@ -26,7 +26,6 @@ class HomeUser extends Component {
   render() {
     return (
       <div>
-        <SideNavUser />
         <Header />
         <div>
           <Row className="home_row home-user-grid row_height">

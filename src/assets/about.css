@@ -92,6 +92,19 @@
   font-size: 1.25em;
 }
 
+.about-right-heading {
+  color: rgb(47, 127, 149);
+}
+
+.about-right-heading h1 {
+  font-family: "Sacramento", sans-serif;
+  font-size: 4.5em;
+}
+
+.about-right-heading h2 {
+  font-size: 1.5em;
+}
+
 .linkedLogo, .gitLogo {
   height: 18px;
   margin-bottom: 0.3em;

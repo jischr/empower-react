@@ -135,7 +135,7 @@ class SignupForm extends Component {
             <Button active={!this.state.isUser} onClick={this.changeUserStatus}>Professional</Button>
           </ButtonGroup>
         </div>
-        <br/><br/>
+        <br/>
         <form onSubmit={this.handleSignup}>
           <FormGroup>
             <Col xs={6} className="grid-form-left">
