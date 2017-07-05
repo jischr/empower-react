@@ -6,7 +6,6 @@ import { Row, Col } from 'react-bootstrap'
 import { API_URL } from '../config'
 import Header from './Header'
 import Charts from './Charts'
-import SideNavC from './SideNavC'
 import AddUser from './AddUser'
 import '../assets/homeClinician.css'
 

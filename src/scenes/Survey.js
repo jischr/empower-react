@@ -4,7 +4,6 @@ import { Cookies } from 'react-cookie'
 
 import Header from '../components/Header'
 import SurveyContent from '../components/SurveyContent'
-import SideNavUser from '../components/SideNavUser'
 
 class Survey extends Component {
   render() {
