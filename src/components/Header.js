@@ -67,7 +67,7 @@ class Header extends Component {
           <h2>Emp <img className="welcome-sun" src={ Sun } alt="empowerU"/> wer</h2>
           </Col>
           <Col md={4} sm={6} xs={12}>
-            <p className="welcome_name"><img className=" welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;
+            <p className="welcome_name"><img className="welcome-user" src={ Man } alt="man logo"/>&nbsp;{this.state.name}&nbsp;&nbsp;&nbsp;&nbsp;
               { this.state.isUser &&
                 <span>
                   <img className="welcome-user" src={ Clipboard } alt="patient number"/>&nbsp;{this.state.patient_number}&nbsp;&nbsp;&nbsp;&nbsp;
