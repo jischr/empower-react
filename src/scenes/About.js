@@ -3,7 +3,7 @@ import { Redirect, Link } from 'react-router-dom'
 import { Cookies } from 'react-cookie'
 import { Grid, Row, Col } from 'react-bootstrap'
 
-import { Github } from '../assets/images/github.svg'
+import Github from '../assets/images/github.svg'
 import Landing from './Landing'
 import '../assets/about.css'
 import Sun from '../assets/images/sun.svg'
@@ -25,12 +25,16 @@ class Home extends Component {
       </div>
       <Row className="upper-row">
         <Col sm={12} md={6} className="about-left">
+        <div className="inner-div">
           <h3>An Empowerment Model</h3>
+          <hr />
+          <p>Evidence shows that when people participate in their treatment, they get better faster. Monitoring thier progress demystifies anxiety, giving people back an element of control.</p>
+        </div>
         </Col>
         <Col sm={12} md={6} className="about-right">
           <div className="inner-div">
-            <p>Evidence shows that when people participate in their treatment, they get better faster. Monitoring thier progress demystifies anxiety, giving people back an element of control.</p>
             <p>Empower teaches individuals to manage their anxiety. After their professional treatment is finished, they have the skills--including journaling and meditation--to maintain their progress.</p>
+            <p>This appliction utilizes the GAD-7--a brief measure for assessing generalized anxiety disorder. Spitzer RL, Kroenke K, Williams JB, et al. Archives of Internal Medicine. 2006;166:1092-1097.</p>
           </div>
         </Col>
       </Row>
@@ -39,14 +43,12 @@ class Home extends Component {
           <Col sm={12} md={4}>
             <img src={ Jen } alt="Jennifer" className="profile-pic text-center" />
             <h2>Jennifer Winer</h2>
-            <p>Developer</p>
-            <p><Link to="https://www.linkedin.com/in/jenniferwiner/" target="blank"></Link><Link to="https://github.com/jenniferwiner/" target="blank"><img src={ Github } alt="github" className="gitLogo"/></Link></p>
+            <p>Web Developer <Link to="https://www.linkedin.com/in/jenniferwiner/" target="blank"><img src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Linkedin-2-icon.png" alt="github" className="linkedLogo"/></Link><Link to="https://github.com/jenniferwiner/" target="blank"><img src={ Github } alt="github" className="gitLogo"/></Link></p>
           </Col>
           <Col sm={12} md={4}>
             <img src={ Emily } alt="Emily" className="profile-pic text-center" />
             <h2>Emily Ringoen</h2>
-            <p>Developer</p>
-            <p><Link to="https://www.linkedin.com/in/emily-ringoen/" target="blank"></Link><Link to="https://github.com/emilyaringoen/" target="blank"><img src={ Github } alt="github" className="gitLogo"/></Link></p>
+            <p>Web Developer <Link to="https://www.linkedin.com/in/emily-ringoen/" target="blank"><img src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Linkedin-2-icon.png" alt="github" className="linkedLogo"/></Link><Link to="https://github.com/emilyaringoen/" target="blank"><img src={ Github } alt="github" className="gitLogo"/></Link></p>
           </Col>
           <Col sm={12} md={4}>
             <img src={ Marg } alt="Margaret" className="profile-pic text-center" />

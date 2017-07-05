@@ -46,7 +46,7 @@
   align-items: center;
 }
 
-.about-right .inner-div {
+.about-right .inner-div, .about-left .inner-div {
   width: 80%;
 }
 
@@ -57,10 +57,17 @@
   font-weight: 700;
 }
 
-.about-right p {
+.about-right p, .about-left p {
   font-size: 1.15em;
   font-weight: 200;
+}
+
+.about-right p {
   color:rgb(249, 247, 236);
+}
+
+.about-leftt p {
+  color:rgb(51, 51, 51);
 }
 
 .about-right {
@@ -79,4 +86,18 @@
 
 .about-grid {
   margin-top: 2em;
+}
+
+.about-grid p {
+  font-size: 1.25em;
+}
+
+.linkedLogo, .gitLogo {
+  height: 18px;
+  margin-bottom: 0.3em;
+}
+
+.linkedLogo {
+  margin-left: 1em;
+  margin-right: 1.25em;
 }
