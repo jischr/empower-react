@@ -143,7 +143,7 @@ class Charts extends Component {
     }
 
     return (
-      <div>
+      <div className="row_height">
       <Col sm={6} className="graph_side">
         <h1>GAD-7 ASSESSMENT SCORES</h1>
         <div className="graph">
