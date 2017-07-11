@@ -41,7 +41,7 @@ class Home extends Component {
             </div>
             <p>Empower teaches individuals the skills to manage their own anxiety through self-monitoring and self-care.</p>
             <p>Through mental health assessment, clincians can track their patient's progress and encourage an active and long-term participation in treatment.</p>
-            <p className="smaller-text"><em>This appliction utilizes the GAD-7, a brief measure for assessing generalized anxiety disorder. Spitzer RL, Kroenke K, Williams JB, et al. Archives of Internal Medicine. 2006;166:1092-1097.</em></p>
+            <p className="smaller-text">This appliction utilizes the GAD-7, a brief measure for assessing generalized anxiety disorder. <em>Spitzer RL, Kroenke K, Williams JB, et al. Archives of Internal Medicine. 2006;166:1092-1097.</em></p>
           </div>
         </Col>
       </Row>
